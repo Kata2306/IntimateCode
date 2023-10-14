@@ -8,6 +8,8 @@ export default function Header() {
                 <h1>IntimateCode</h1>
                 <h2>"Code Your Imagination, Create Reality"</h2>
             </div>
+
+            <button></button>
         </div>
     )
 }
