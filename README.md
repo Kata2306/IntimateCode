@@ -7,7 +7,7 @@ CRUD web app for managing lingerie, users can add products to their wishlist or 
 A product in the database looks like this: 
 - int id
 - String name
-- int price
+- Double price
 - Enum color
 - Enum brand
 - String imageUrl
