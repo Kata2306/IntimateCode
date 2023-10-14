@@ -1,0 +1,5 @@
+# Ignore common project files
+/target/
+/.idea/
+/.vscode/
+*.iml
