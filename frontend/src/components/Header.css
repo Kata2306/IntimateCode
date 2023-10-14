@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+
+
+.header {
+    font-family: 'Cherry Swash', serif;
+    display: flex;
+    flex-direction: row;
+}
+
+.header h1 {
+    font-size: 45px;
+    color: #f63081;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.header h2 {
+    font-size: 30px;
+    color: #f630837d;
+    margin-top: 15px;
+}
+
+.header img{
+    width: 200px;
+}

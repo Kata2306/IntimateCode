@@ -1,13 +1,13 @@
 import './App.css';
-import SingleProduct from './components/SingleProduct';
+import Header from './components/Header';
+import ProductsDisplay from './components/ProductsDisplay';
+
 
 function App() {
   return (
     <div className="App">
-      <SingleProduct 
-      price="42,99"
-      product="Private Tutu-Korsett - Schwarz"
-      imgLink="https://www.hunkemoller.at/dw/image/v2/BCHL_PRD/on/demandware.static/-/Sites-hkm-master/default/dwdd8903c4/images/large/164981_1.jpg"/>
+      <Header />
+      <ProductsDisplay />
     </div>
   );
 }
