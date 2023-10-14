@@ -10,6 +10,8 @@ A product in the database looks like this:
 - Double price
 - Enum color
 - Enum brand
+- Enum category
 - String imageUrl
 - Double rating
 - Map<Size, Integer> availableAmount
+- [] Strings productDetails
