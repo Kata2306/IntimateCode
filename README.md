@@ -12,3 +12,4 @@ A product in the database looks like this:
 - Enum brand
 - String imageUrl
 - Double rating
+- Map<Size, Integer> availableAmount
