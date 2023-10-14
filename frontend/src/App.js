@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import SingleProduct from './components/SingleProduct';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SingleProduct 
+      price="42,99"
+      product="Private Tutu-Korsett - Schwarz"
+      imgLink="https://www.hunkemoller.at/dw/image/v2/BCHL_PRD/on/demandware.static/-/Sites-hkm-master/default/dwdd8903c4/images/large/164981_1.jpg"/>
     </div>
   );
 }
