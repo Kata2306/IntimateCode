@@ -14,4 +14,4 @@ A product in the database looks like this:
 - String imageUrl
 - Double rating
 - Map<Size, Integer> availableAmount
-- [] Strings productDetails
+- String[] productDetails
