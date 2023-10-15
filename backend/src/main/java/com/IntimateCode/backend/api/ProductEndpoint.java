@@ -22,12 +22,6 @@ public class ProductEndpoint {
         return productRepository.findAll();
     }
 
-
-    @GetMapping("/name/{name}")
-    Product findByName(@PathVariable String name) throws ProductNotFoundException {
-        return productRepository.findByName(name).orElseThrow(ProductNotFoundException::new);
-    }
-
     @PostMapping
     Product save(@RequestBody Product product) {
         return productRepository.save(product);
@@ -39,17 +33,25 @@ public class ProductEndpoint {
     }
 
     @PutMapping("/{id}")
-    Product update(@PathVariable Long id, @RequestBody Product updatedNote) throws  ProductNotFoundException {
+    Product update(@PathVariable Long id, @RequestBody Product updatedProduct) throws ProductNotFoundException {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(ProductNotFoundException::new);
 
         // Update the existing note with the data from updatedNote
-        existingProduct.setName(updatedNote.getName());
+        existingProduct.setName(updatedProduct.getName());
+        existingProduct.setPrice(updatedProduct.getPrice());
+        existingProduct.setColor(updatedProduct.getColor());
+        existingProduct.setBrand(updatedProduct.getBrand());
+        existingProduct.setCategory(updatedProduct.getCategory());
+        existingProduct.setImageUrl(updatedProduct.getImageUrl());
+        existingProduct.setRating(updatedProduct.getRating());
 
-        // todo: set rest of fields
+        //todo: implement PUT for product details and for product sizes
 
         // Save the updated note
         return productRepository.save(existingProduct);
     }
+
+    //todo: implement requests for the remaining 2 database tables!
 
 }
