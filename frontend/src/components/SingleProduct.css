@@ -1,0 +1,25 @@
+.singleProduct {
+    border: 2px solid white;
+    width: fit-content;
+    padding: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.037);
+    margin: 25px;
+}
+
+.singleProduct-image {
+    height: 500px;
+    transition: 0.3s; /* Adding a smooth transition effect */
+}
+
+.singleProduct-image:hover {
+    height: 800px;
+    position: absolute;
+    border: 20px solid white;
+}
+
+.singleProduct-underImage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
