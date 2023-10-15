@@ -15,5 +15,4 @@ public class ProductDetail {
 
     private String detail;
 
-    // Getters/setters...
 }
