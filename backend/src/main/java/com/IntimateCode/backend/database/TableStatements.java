@@ -5,10 +5,10 @@ public interface TableStatements {
             "id SERIAL PRIMARY KEY," +
             "name VARCHAR(100)," +
             "price DECIMAL(10,2)," +
-            "color color," +
-            "brand brand," +
-            "category category," +
-            "imageurl VARCHAR(255)," +
+            "color VARCHAR(100)," +
+            "brand VARCHAR(100)," +
+            "category VARCHAR(100)," +
+            "imageurl VARCHAR(1000)," +
             "rating DECIMAL(10,2)" +
             ");";
 

@@ -29,8 +29,8 @@ public class ProductEndpoint {
     }
 
     @PostMapping
-    Product save(@RequestBody Product note) {
-        return productRepository.save(note);
+    Product save(@RequestBody Product product) {
+        return productRepository.save(product);
     }
 
     @DeleteMapping("/{id}")
