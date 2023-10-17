@@ -21,9 +21,11 @@ public class Product {
     private Color color;
 
     @Column(name = "brand")
+    @Enumerated(EnumType.STRING)
     private Brand brand;
 
     @Column(name = "category")
+    @Enumerated(EnumType.STRING)
     private Category category;
 
     @Column(name = "imageurl")

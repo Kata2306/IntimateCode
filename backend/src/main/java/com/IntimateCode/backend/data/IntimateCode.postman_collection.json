@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "b89e1666-f9b3-4080-bbb4-e73ffa11db6d",
+		"name": "IntimateCode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26172203"
+	},
+	"item": [
+		{
+			"name": "GET all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a new product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"Silk underdress with lace inserts\",\r\n    \"price\": 15.90,\r\n    \"color\": \"blue\",\r\n    \"brand\": \"Intimissimi\",\r\n    \"category\": \"Sleepwear\",\r\n    \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n    \"rating\": 4.0\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a single product via id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a single product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"Rose Petal Panties Max\",\r\n        \"price\": 13.47,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Fenty\",\r\n        \"category\": \"Bras\",\r\n        \"imageUrl\": \"http://eqomcdn.com/content/photos/products/obsessive/75070/1693912646.obs6480_9.jpg?w=720&q=90\",\r\n        \"rating\": 5.0,\r\n        \"availableSizes\": [],\r\n        \"productDetails\": []\r\n    },",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
