@@ -1,14 +1,15 @@
 .cartButton {
-    font-size: 35px;
+    font-size: 40px;
     background-color: white;
     border: none;
-    padding: 5px;
-    margin: 5px;
-    transition: height 0.3s; /* Adding a smooth transition effect */
+    padding: 15px;
+    margin: 15px;
+    transition: 0.3s; /* Adding a smooth transition effect */
+    /*filter: hue-rotate(100deg) brightness(100%) opacity(100%);*/
 }
 
 .cartButton:hover {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .cartButton:active {
