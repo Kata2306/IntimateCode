@@ -1,0 +1,61 @@
+.filterbarBackground {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color:rgba(0, 0, 0, 0.487);
+    border: 2px solid black;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.filterbar {
+    background-color: white;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filterbarHeader {
+    font-size: 50px;
+    padding: 25px;
+    margin: 25px;
+}
+
+.filterbarList {
+    position: relative;
+    width: 80%;
+    margin: 25px;
+}
+
+.filterbarListItem {
+    padding: 15px;
+    margin: 15px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filterbarListItem::marker {
+    content: none;
+}
+
+.filterbarListItem:hover {
+    color: #f63081;
+}
+
+.closeButton {
+    border: none;
+    background-color: white;
+    font-size: 50px;
+    padding: 25px;
+    margin-top: 45px;
+    margin-right: 45px;
+    align-self: flex-end;
+}

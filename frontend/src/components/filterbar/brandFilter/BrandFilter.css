@@ -1,0 +1,71 @@
+.brandFilter {
+  background-color: white;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 80%;
+  height: 100%;
+}
+
+.brand:hover {
+  background-color: #ffa1ca36;
+}
+
+.closeButton {
+  border: none;
+  background-color: white;
+  font-size: 50px;
+  padding: 25px;
+  margin-top: 45px;
+  margin-right: 45px;
+  align-self: flex-end;
+}
+
+.brandFilterHeader {
+  font-size: 50px;
+  padding: 25px;
+  margin: 25px;
+}
+
+.filterBackground {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.487);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.backAndCloseButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.brand input {
+  margin: 15px;
+  height: 20px;
+  width: 20px;
+  accent-color: #f63081;
+}

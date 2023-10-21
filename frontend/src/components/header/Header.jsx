@@ -1,5 +1,5 @@
 import "./Header.css";
-import CartButton from "./CartButton.jsx";
+import CartButton from "../cartButton/CartButton.jsx";
 
 export default function Header() {
     return (

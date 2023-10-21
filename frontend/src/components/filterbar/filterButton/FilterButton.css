@@ -1,0 +1,25 @@
+.filterButton {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 25px;
+    border: none;
+    background-color: white;
+}
+
+.filterButton:hover {
+    background-color: #f6308337;
+}
+
+.filterButtonText {
+    padding: 10px;
+    font-size: 30px;
+    color: #f63081;
+}
+
+.filterButtonImage {
+    width: 45px;
+    padding: 10px;
+}

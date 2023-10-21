@@ -1,4 +1,4 @@
-import SingleProduct from "./SingleProduct";
+import SingleProduct from "../singleProduct/SingleProduct";
 import "./ProductsDisplay.css";
 
 export default function ProductsDisplay() {

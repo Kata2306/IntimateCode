@@ -1,0 +1,129 @@
+.colorFilterBackground {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.487);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.colorFilter {
+  background-color: white;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.colorFilterHeader {
+  font-size: 50px;
+  padding: 25px;
+  margin: 25px;
+}
+
+.color {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.color:hover {
+  background-color: #ffa1ca36;
+}
+
+.color input {
+  margin: 15px; 
+  height: 20px;
+  width: 20px;
+}
+
+/*
+.color input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+//Create a custom checkbox
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+//Create the checkmark/indicator (hidden when not checked)
+.checkmark:after {
+  content: "";
+  position: relative;
+  display: none;
+}
+
+//Show the checkmark when checked
+.checkmark:after {
+  display: block;
+}
+
+//Style the checkmark/indicator
+.checkmark:after {
+  width: 5px;
+  height: 10px;
+  border: 2px solid blue;
+  background-color: #f63081;
+  top: 5px;
+  left: 5px;
+  right: -5px;
+  bottom: 5px;
+}
+*/
+
+.button {
+  background-color: #ffa1ca36;
+  border: none;
+  margin: 15px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.button:hover {
+  background-color: #f630837c;
+}
+
+.button:active {
+  box-shadow: 0px 0px 5px #f63081;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.closeButton {
+  border: none;
+  background-color: white;
+  font-size: 50px;
+  padding: 25px;
+  margin-top: 45px;
+  margin-right: 45px;
+  align-self: flex-end;
+}
