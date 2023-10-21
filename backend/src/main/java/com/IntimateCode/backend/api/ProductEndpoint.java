@@ -2,9 +2,12 @@ package com.IntimateCode.backend.api;
 
 import com.IntimateCode.backend.data.Product;
 import com.IntimateCode.backend.data.ProductRepository;
+import com.IntimateCode.backend.data.Size;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -20,6 +23,12 @@ public class ProductEndpoint {
     @GetMapping
     List<Product> findAll() {
         return productRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    Product findSingleProduct(@PathVariable long id) {
+        Optional<Product> product = productRepository.findById(id);
+        return product.orElse(null);
     }
 
     @PostMapping
@@ -45,13 +54,21 @@ public class ProductEndpoint {
         existingProduct.setCategory(updatedProduct.getCategory());
         existingProduct.setImageUrl(updatedProduct.getImageUrl());
         existingProduct.setRating(updatedProduct.getRating());
-
-        //todo: implement PUT for product details and for product sizes
+        existingProduct.setDetails(updatedProduct.getDetails());
 
         // Save the updated note
         return productRepository.save(existingProduct);
     }
 
-    //todo: implement requests for the remaining 2 database tables!
+
+    // product sizes for specific product
+
+//    @GetMapping("/{id}/sizes")
+//    List<Size> getProductSizesForProduct(@PathVariable long id) {
+//        Optional<Product> product = productRepository.findById(id);
+//        return product.map(Product::getAvailableSizes).orElse(null);
+//    }
+
+    //todo: implement requests for the remaining database tables!
 
 }
