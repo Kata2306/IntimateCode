@@ -1,5 +1,6 @@
-package com.IntimateCode.backend.data;
+package com.IntimateCode.backend.repository;
 
+import com.IntimateCode.backend.model.classes.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

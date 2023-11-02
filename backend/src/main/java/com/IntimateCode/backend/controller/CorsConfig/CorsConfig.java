@@ -1,4 +1,4 @@
-package com.IntimateCode.backend.api;
+package com.IntimateCode.backend.controller.CorsConfig;
 
 
 import org.springframework.context.annotation.Configuration;

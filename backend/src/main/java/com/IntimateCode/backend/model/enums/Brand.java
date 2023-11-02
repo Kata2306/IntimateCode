@@ -1,4 +1,4 @@
-package com.IntimateCode.backend.data;
+package com.IntimateCode.backend.model.enums;
 
 public enum Brand {
 
