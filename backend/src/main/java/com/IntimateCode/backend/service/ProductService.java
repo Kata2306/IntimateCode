@@ -65,18 +65,24 @@ public class ProductService {
                 .orElseThrow(ProductNotFoundException::new);
 
         ProductSize existingProductSize = existingProduct.getProductSize();
-        // Update the existing sizes based on the updated ProductSize object
+
         if (existingProductSize != null) {
             existingProductSize.setXs(updatedSize.getXs());
             existingProductSize.setS(updatedSize.getS());
             // ... continue updating other size values
 
-            productSizeRepository.save(existingProductSize);
+            // Save the modified ProductSize into the existing Product
+            existingProduct.setProductSize(existingProductSize);
         } else {
             updatedSize.setProduct(existingProduct);
-            productSizeRepository.save(updatedSize);
+            // Save the new ProductSize and set it to the existing Product
+            existingProduct.setProductSize(updatedSize);
         }
+
+        // Save the modified Product (with updated or new ProductSize)
+        productRepository.save(existingProduct);
 
         return existingProduct;
     }
+
 }

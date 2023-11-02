@@ -1,6 +1,7 @@
 package com.IntimateCode.backend.model.classes;
 
 import com.IntimateCode.backend.model.classes.Product;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -10,9 +11,9 @@ public class ProductSize {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @OneToOne
     @JoinColumn(name = "product_id")
+    @JsonBackReference
     private Product product;
 
     private Integer xs;
