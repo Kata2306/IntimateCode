@@ -1,9 +1,8 @@
 
-## Why it's not possible to create all tables simultaneously
+## Initialize database
 
-The products table has relations with the product_details and the product_sizes tables. 
-When creating them all in one loop, an error is encountered. In the main static method, 
-the database initializer is run twice because of this reason.
+You can initialize the database to the standard items by importing the postman collection and running the INITIALIZE database Post request.
+Also, the backend is set to be cleared every time the application re-starts. 
 
 ## POST request
 Pay attention when adding new items. The fields in the request body must be the same as in the database. 

@@ -15,6 +15,7 @@ public class Product {
 
     private double price;
 
+    @Enumerated(EnumType.STRING)
     private Color color;
 
     @Enumerated(EnumType.STRING)
