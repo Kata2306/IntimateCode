@@ -30,7 +30,7 @@ public class Product {
 
     private String details;
 
-    @OneToOne(mappedBy = "product", orphanRemoval = true)
+    @OneToOne(mappedBy = "product", orphanRemoval = true, cascade = CascadeType.ALL)
     private ProductSize productSize;
 
     public long getId() {
