@@ -59,6 +59,25 @@
 			"response": []
 		},
 		{
+			"name": "GET sizes for a single product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/1/sizes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"1",
+						"sizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "POST a new product",
 			"request": {
 				"method": "POST",

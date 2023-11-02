@@ -85,4 +85,10 @@ public class ProductService {
         return existingProduct;
     }
 
+    public ProductSize getSizesForSingleProduct(Long id) {
+        Optional<Product> product = productRepository.findById(id);
+        return product.get().getProductSize();
+
+    }
+
 }

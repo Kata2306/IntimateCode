@@ -55,7 +55,10 @@ public class ProductController {
     Product addSizes(@RequestBody ProductSize productSize, @PathVariable Long id) throws ProductNotFoundException {
         return productService.updateProductSize(id, productSize);
     }
-
+    @GetMapping("/{id}/sizes")
+    ProductSize findSizesForProduct(@PathVariable Long id) {
+        return productService.getSizesForSingleProduct(id);
+    }
 
 
 }
