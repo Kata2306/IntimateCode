@@ -9,7 +9,7 @@
   border: 2px solid black;
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .colorFilter {

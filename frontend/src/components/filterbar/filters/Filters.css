@@ -1,7 +1,7 @@
 .filters {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     align-self: flex-end;
     border: 5px;
     margin: 5px;
