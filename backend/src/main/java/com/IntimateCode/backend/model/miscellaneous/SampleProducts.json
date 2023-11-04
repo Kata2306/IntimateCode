@@ -6,17 +6,36 @@
     "brand": "Amorelie",
     "category": "Bras",
     "imageUrl": "https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073",
-    "rating": 4.5
+    "rating": 4.5,
+    "details": "sexy, tight-fit, comfy",
+    "productSize": {
+      "xs": 8,
+      "s": 12,
+      "m": 18,
+      "l": 15,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 1
+    }
   },
   {
-    "id": 2,
     "name": "Rose Petal Panties",
     "price": 13.45,
     "color": "pink",
     "brand": "Intimissimi",
     "category": "Panties",
     "imageUrl": "https://eqomcdn.com/content/photos/products/obsessive/75070/1693912646.obs6480_9.jpg?w=720&q=90",
-    "rating": 4.2
+    "rating": 4.2,
+    "details": "Elegant, versatile, durable",
+    "productSize": {
+      "xs": 8,
+      "s": 12,
+      "m": 8,
+      "l": 10,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 2
+    }
   },
   {
     "name": "Sexy blue slip",
@@ -25,7 +44,17 @@
     "brand": "Fenty",
     "category": "Panties",
     "imageUrl": "https://eqomcdn.com/content/photos/products/christine-le-duc/69532/1684938265.cth010-blu-xss_3.jpg?w=720&q=90",
-    "rating": 4.7
+    "rating": 4.7,
+    "details": "Smooth, breathable, lightweight",
+    "productSize": {
+      "xs": 1,
+      "s": 12,
+      "m": 1,
+      "l": 19,
+      "xl": 6,
+      "xxl": 2,
+      "xxxl": 5
+    }
   },
   {
     "name": "Sexy pink slip",
@@ -34,7 +63,17 @@
     "brand": "Fenty",
     "category": "Panties",
     "imageUrl": "https://eqomcdn.com/content/photos/products/christine-le-duc/69529/1684937192.cth010-pnk-xss_3.jpg?w=720&q=90",
-    "rating": 4.1
+    "rating": 4.1,
+    "details": "Supportive, flexible, sporty",
+    "productSize": {
+      "xs": 8,
+      "s": 12,
+      "m": 18,
+      "l": 15,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 1
+    }
   },
   {
     "name": "Set with bra, panties and stockings",
@@ -43,7 +82,17 @@
     "brand": "Bluebella",
     "category": "Lingerie_Set",
     "imageUrl": "https://eqomcdn.com/content/photos/products/christine-le-duc/48871/1687940134.065587_11.jpg?w=720&q=90",
-    "rating": 3.9
+    "rating": 3.9,
+    "details": "Vibrant, playful, trendy",
+    "productSize": {
+      "xs": 3,
+      "s": 7,
+      "m": 22,
+      "l": 1,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 1
+    }
   },
   {
     "name": "Suspender stockings Glorious - black",
@@ -52,7 +101,17 @@
     "brand": "Victorias_Secret",
     "category": "Hosiery",
     "imageUrl": "https://eqomcdn.com/content/photos/products/christine-le-duc/64405/1678275347.cld-hblk-003-sm_5.jpg?w=720&q=90",
-    "rating": 4.6
+    "rating": 4.6,
+    "details": "Relaxed, casual, effortless",
+    "productSize": {
+      "xs": 4,
+      "s": 11,
+      "m": 12,
+      "l": 14,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 1
+    }
   },
   {
     "name": "Dark Desire latex body",
@@ -61,7 +120,17 @@
     "brand": "Agent_Provacateur",
     "category": "Fetish",
     "imageUrl": "https://eqomcdn.com/content/photos/products/christine-le-duc/64942/1694512937.bsrd-lblk-012-s_8.jpg?w=720&q=90",
-    "rating": 4.7
+    "rating": 4.7,
+    "details": "sexy, tight-fit, comfy",
+    "productSize": {
+      "xs": 4,
+      "s": 11,
+      "m": 8,
+      "l": 10,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 1
+    }
   },
   {
     "name": "Luxury bustier Veronica red",
@@ -70,7 +139,17 @@
     "brand": "CUUP",
     "category": "Bras",
     "imageUrl": "https://eqomcdn.com/content/photos/products/axami/62191/1650026199.VC-9691-S_6.jpg?w=720&q=90",
-    "rating": 4.8
+    "rating": 4.8,
+    "details": "Quirky, fun, eye-catching",
+    "productSize": {
+      "xs": 5,
+      "s": 11,
+      "m": 12,
+      "l": 12,
+      "xl": 6,
+      "xxl": 3,
+      "xxxl": 1
+    }
   },
   {
     "name": "Magic bodyfashion body",
@@ -79,7 +158,17 @@
     "brand": "CUUP",
     "category": "Shapewear",
     "imageUrl": "https://img01.ztat.net/article/spp-media-p1/65adefa24b0e3bd2870c758c55ac58d5/9bbb41f84d9c4c50b845e2f32b6ad5cd.jpg?imwidth=1800",
-    "rating": 4.9
+    "rating": 4.9,
+    "details": "sexy, tight-fit, comfy",
+    "productSize": {
+      "xs": 8,
+      "s": 12,
+      "m": 8,
+      "l": 5,
+      "xl": 1,
+      "xxl": 4,
+      "xxxl": 1
+    }
   },
   {
     "name": "Silk underdress with lace inserts",
@@ -88,6 +177,16 @@
     "brand": "Intimissimi",
     "category": "Sleepwear",
     "imageUrl": "https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg",
-    "rating": 4.0
+    "rating": 4.0,
+    "details": "Relaxed, casual, effortless",
+    "productSize": {
+      "xs": 0,
+      "s": 1,
+      "m": 8,
+      "l": 13,
+      "xl": 2,
+      "xxl": 13,
+      "xxxl": 1
+    }
   }
 ]

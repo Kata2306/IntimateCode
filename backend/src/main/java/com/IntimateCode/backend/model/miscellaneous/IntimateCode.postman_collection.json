@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "b89e1666-f9b3-4080-bbb4-e73ffa11db6d",
+		"name": "IntimateCode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26172203"
+	},
+	"item": [
+		{
+			"name": "GET all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET single product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all product sizes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/productsizes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"productsizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET sizes for a single product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/1/sizes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"1",
+						"sizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a new product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"Silk underdress with lace inserts\",\r\n    \"price\": 15.90,\r\n    \"color\": \"blue\",\r\n    \"brand\": \"Intimissimi\",\r\n    \"category\": \"Sleepwear\",\r\n    \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n    \"rating\": 4.0, \r\n    \"details\": \"sexy, tight-fit, comfy\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INITIALIZE database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Black lace bralette\",\r\n        \"price\": 19.99,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Amorelie\",\r\n        \"category\": \"Bras\",\r\n        \"imageUrl\": \"https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073\",\r\n        \"rating\": 4.5,\r\n        \"details\": \"sexy, tight-fit, comfy\",\r\n        \"productSize\": {\r\n            \"xs\": 8,\r\n            \"s\": 12,\r\n            \"m\": 18,\r\n            \"l\": 15,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Rose Petal Panties\",\r\n        \"price\": 13.45,\r\n        \"color\": \"pink\",\r\n        \"brand\": \"Intimissimi\",\r\n        \"category\": \"Panties\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/obsessive/75070/1693912646.obs6480_9.jpg?w=720&q=90\",\r\n        \"rating\": 4.2,\r\n        \"details\": \"Elegant, versatile, durable\",\r\n        \"productSize\": {\r\n            \"xs\": 8,\r\n            \"s\": 12,\r\n            \"m\": 8,\r\n            \"l\": 10,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 2\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Sexy blue slip\",\r\n        \"price\": 26.79,\r\n        \"color\": \"blue\",\r\n        \"brand\": \"Fenty\",\r\n        \"category\": \"Panties\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/christine-le-duc/69532/1684938265.cth010-blu-xss_3.jpg?w=720&q=90\",\r\n        \"rating\": 4.7,\r\n        \"details\": \"Smooth, breathable, lightweight\",\r\n        \"productSize\": {\r\n            \"xs\": 1,\r\n            \"s\": 12,\r\n            \"m\": 1,\r\n            \"l\": 19,\r\n            \"xl\": 6,\r\n            \"xxl\": 2,\r\n            \"xxxl\": 5\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Sexy pink slip\",\r\n        \"price\": 26.79,\r\n        \"color\": \"pink\",\r\n        \"brand\": \"Fenty\",\r\n        \"category\": \"Panties\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/christine-le-duc/69529/1684937192.cth010-pnk-xss_3.jpg?w=720&q=90\",\r\n        \"rating\": 4.1,\r\n        \"details\": \"Supportive, flexible, sporty\",\r\n        \"productSize\": {\r\n            \"xs\": 8,\r\n            \"s\": 12,\r\n            \"m\": 18,\r\n            \"l\": 15,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Set with bra, panties and stockings\",\r\n        \"price\": 65.20,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Bluebella\",\r\n        \"category\": \"Lingerie_Set\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/christine-le-duc/48871/1687940134.065587_11.jpg?w=720&q=90\",\r\n        \"rating\": 3.9,\r\n        \"details\": \"Vibrant, playful, trendy\",\r\n        \"productSize\": {\r\n            \"xs\": 3,\r\n            \"s\": 7,\r\n            \"m\": 22,\r\n            \"l\": 1,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Suspender stockings Glorious - black\",\r\n        \"price\": 9.99,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Victorias_Secret\",\r\n        \"category\": \"Hosiery\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/christine-le-duc/64405/1678275347.cld-hblk-003-sm_5.jpg?w=720&q=90\",\r\n        \"rating\": 4.6,\r\n        \"details\": \"Relaxed, casual, effortless\",\r\n        \"productSize\": {\r\n            \"xs\": 4,\r\n            \"s\": 11,\r\n            \"m\": 12,\r\n            \"l\": 14,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Dark Desire latex body\",\r\n        \"price\": 49.99,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Agent_Provacateur\",\r\n        \"category\": \"Fetish\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/christine-le-duc/64942/1694512937.bsrd-lblk-012-s_8.jpg?w=720&q=90\",\r\n        \"rating\": 4.7,\r\n        \"details\": \"sexy, tight-fit, comfy\",\r\n        \"productSize\": {\r\n            \"xs\": 4,\r\n            \"s\": 11,\r\n            \"m\": 8,\r\n            \"l\": 10,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Luxury bustier Veronica red\",\r\n        \"price\": 45.20,\r\n        \"color\": \"red\",\r\n        \"brand\": \"CUUP\",\r\n        \"category\": \"Bras\",\r\n        \"imageUrl\": \"https://eqomcdn.com/content/photos/products/axami/62191/1650026199.VC-9691-S_6.jpg?w=720&q=90\",\r\n        \"rating\": 4.8,\r\n        \"details\": \"Quirky, fun, eye-catching\",\r\n        \"productSize\": {\r\n            \"xs\": 5,\r\n            \"s\": 11,\r\n            \"m\": 12,\r\n            \"l\": 12,\r\n            \"xl\": 6,\r\n            \"xxl\": 3,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Magic bodyfashion body\",\r\n        \"price\": 20.90,\r\n        \"color\": \"black\",\r\n        \"brand\": \"CUUP\",\r\n        \"category\": \"Shapewear\",\r\n        \"imageUrl\": \"https://img01.ztat.net/article/spp-media-p1/65adefa24b0e3bd2870c758c55ac58d5/9bbb41f84d9c4c50b845e2f32b6ad5cd.jpg?imwidth=1800\",\r\n        \"rating\": 4.9,\r\n        \"details\": \"sexy, tight-fit, comfy\",\r\n        \"productSize\": {\r\n            \"xs\": 8,\r\n            \"s\": 12,\r\n            \"m\": 8,\r\n            \"l\": 5,\r\n            \"xl\": 1,\r\n            \"xxl\": 4,\r\n            \"xxxl\": 1\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Silk underdress with lace inserts\",\r\n        \"price\": 15.90,\r\n        \"color\": \"blue\",\r\n        \"brand\": \"Intimissimi\",\r\n        \"category\": \"Sleepwear\",\r\n        \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n        \"rating\": 4.0,\r\n        \"details\": \"Relaxed, casual, effortless\",\r\n        \"productSize\": {\r\n            \"xs\": 0,\r\n            \"s\": 1,\r\n            \"m\": 8,\r\n            \"l\": 13,\r\n            \"xl\": 2,\r\n            \"xxl\": 13,\r\n            \"xxxl\": 1\r\n        }\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/initialize",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"initialize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a single product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"id\": 1,\r\n        \"name\": \"Black lace bralette\",\r\n        \"price\": 20.00,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Amorelie\",\r\n        \"category\": \"Bras\",\r\n        \"imageUrl\": \"https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073\",\r\n        \"rating\": 4.5,\r\n        \"details\": \"sexy, tight-fit, comfy\",\r\n        \"productSize\": null\r\n    },",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE a product with product sizes",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"xs\": 5,\r\n    \"s\": 10,\r\n    \"m\": 15,\r\n    \"l\": 20,\r\n    \"xl\": 10,\r\n    \"xxl\": 5,\r\n    \"xxxl\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/add-sizes/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"add-sizes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a single product via id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

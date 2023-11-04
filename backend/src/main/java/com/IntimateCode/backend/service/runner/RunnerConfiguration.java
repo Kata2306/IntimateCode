@@ -10,5 +10,7 @@
 //    @Bean
 //    ApplicationRunner runner (Game game){
 //        return args -> game.run();
+
+//todo: database seeder
 //    }
 //}

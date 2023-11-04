@@ -1,4 +1,4 @@
-package com.IntimateCode.backend.api;
+package com.IntimateCode.backend.service.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
