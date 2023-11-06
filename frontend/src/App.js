@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 import ProductsDisplay from "./components/productsDisplay/ProductsDisplay";
 import BrandFilter from "./components/filterbar/brandFilter/BrandFilter";
@@ -7,6 +7,7 @@ import ColorFilter from "./components/filterbar/colorFilter/ColorFilter";
 import Filterbar from "./components/filterbar/filterbar/Filterbar";
 import Filters from "./components/filterbar/filters/Filters";
 import ProductTypeFilter from "./components/filterbar/productTypeFilter/ProductTypeFilter";
+import { fetchDataFromBackend } from "./api";
 
 function App() {
   //for Filters
@@ -23,6 +24,7 @@ function App() {
 
   // for BrandFilter
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const handleBrandSelection = (pickedBrands) => {
     setSelectedBrands(pickedBrands);
@@ -36,6 +38,20 @@ function App() {
     setSelectedTypes(pickedTypes);
   };
   // end TypeFilter
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchDataFromBackend();
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -70,7 +86,7 @@ function App() {
           onTypeSelect={handleTypeSelection}
         />
       )}
-      <ProductsDisplay />
+      <ProductsDisplay products={{products}} />
     </div>
   );
 }
