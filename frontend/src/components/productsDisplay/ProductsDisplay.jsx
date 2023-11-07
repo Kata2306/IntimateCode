@@ -1,10 +1,27 @@
 import { useEffect, useState } from "react";
 import SingleProduct from "../singleProduct/SingleProduct";
 import "./ProductsDisplay.css";
-//import fetchProducts from "../api/fetchProducts.js";
 
 export default function ProductsDisplay({ products }) {
   console.log(products.products);
+  
+  const [cart, setCart] = useState({});
+
+  const addToCart = (productId) => {
+    if (cart[productId]) {
+      setCart({
+        ...cart,
+        [productId]: cart[productId] + 1,
+      });
+    } else {
+      setCart({
+        ...cart,
+        [productId]: 1,
+      });
+    }
+  };
+
+  console.log(cart);
 
   return (
     <div className="productsDisplay">
@@ -14,7 +31,7 @@ export default function ProductsDisplay({ products }) {
           price={product.price}
           product={product.name}
           imgLink={product.imageUrl}
-          onClickCartButton={() => console.log("buy me <3")}
+          onClickCartButton={() => addToCart(product.id)}
         />
       ))}
     </div>
