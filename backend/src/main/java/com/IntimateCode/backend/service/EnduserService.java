@@ -2,6 +2,7 @@ package com.IntimateCode.backend.service;
 
 import com.IntimateCode.backend.model.classes.Enduser;
 import com.IntimateCode.backend.repository.EnduserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,5 +17,10 @@ public class EnduserService {
 
     public List<Enduser> getAllUsers (){
         return enduserRepository.findAll();
+    }
+
+    @Transactional
+    public Enduser postNewUser(Enduser enduser){
+        return enduserRepository.save(enduser);
     }
 }

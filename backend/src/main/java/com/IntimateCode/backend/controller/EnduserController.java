@@ -2,9 +2,7 @@ package com.IntimateCode.backend.controller;
 
 import com.IntimateCode.backend.model.classes.Enduser;
 import com.IntimateCode.backend.service.EnduserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class EnduserController {
     @GetMapping
     public List<Enduser> getAllUsers (){
         return enduserService.getAllUsers();
+    }
+
+    @PostMapping
+    public  Enduser addNewUser(@RequestBody Enduser enduser){
+        return enduserService.postNewUser(enduser);
     }
 }
