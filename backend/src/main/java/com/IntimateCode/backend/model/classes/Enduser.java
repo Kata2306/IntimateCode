@@ -9,13 +9,13 @@ import jakarta.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class User {
+public class Enduser {
     @Id
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    @OneToMany(mappedBy = "enduser", orphanRemoval = true)
     private List<Product> productList;
 
     private Boolean loggedIn = false;

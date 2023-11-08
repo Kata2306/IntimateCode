@@ -35,7 +35,7 @@ public class Product {
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "user_id")
-    private User user;
+    private Enduser enduser;
 
     @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
