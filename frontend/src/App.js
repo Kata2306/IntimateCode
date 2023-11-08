@@ -1,13 +1,15 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
-import ProductsDisplay from "./components/productsDisplay/ProductsDisplay";
-import BrandFilter from "./components/filterbar/brandFilter/BrandFilter";
-import ColorFilter from "./components/filterbar/colorFilter/ColorFilter";
-import Filterbar from "./components/filterbar/filterbar/Filterbar";
-import Filters from "./components/filterbar/filters/Filters";
-import ProductTypeFilter from "./components/filterbar/productTypeFilter/ProductTypeFilter";
+
 import { fetchDataFromBackend } from "./api";
+import ProductsDisplay from "./components/productsDisplay/ProductsDisplay";
+import Filterbar from "./components/navbar/filterbar/filterbar/Filterbar";
+import Filters from "./components/navbar/filterbar/filters/Filters";
+import ColorFilter from "./components/navbar/filterbar/colorFilter/ColorFilter";
+import BrandFilter from "./components/navbar/filterbar/brandFilter/BrandFilter";
+import ProductTypeFilter from "./components/navbar/filterbar/productTypeFilter/ProductTypeFilter";
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
   //for Filters
@@ -55,37 +57,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Filters HandleFilterButton={() => setFilter("active")} />
-      {filter === "active" && (
-        <Filterbar
-          handleCloseFilterbar={() => setFilter("inactive")}
-          handleFilterbarItemColor={() => setFilter("activeColor")}
-          handleFilterbarItemBrand={() => setFilter("activeBrand")}
-          handleFilterbarItemType={() => setFilter("activeType")}
-        />
-      )}
-      {filter === "activeColor" && (
-        <ColorFilter
-          handleCloseFilterbar={() => setFilter("inactive")}
-          handleBackButton={() => setFilter("active")}
-          onColorSelect={handleColorSelection}
-        />
-      )}
-      {filter === "activeBrand" && (
-        <BrandFilter
-          handleCloseFilterbar={() => setFilter("inactive")}
-          handleBackButton={() => setFilter("active")}
-          onBrandSelect={handleBrandSelection}
-        />
-      )}
-
-      {filter === "activeType" && (
-        <ProductTypeFilter
-          handleCloseFilterbar={() => setFilter("inactive")}
-          handleBackButton={() => setFilter("active")}
-          onTypeSelect={handleTypeSelection}
-        />
-      )}
+      <NavBar />
       <ProductsDisplay products={{products}} />
     </div>
   );

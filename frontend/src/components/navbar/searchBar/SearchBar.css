@@ -1,0 +1,31 @@
+.searchBar {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 25px;
+    padding-right: 25px;
+    font-size: 30px;
+}
+
+.searchBarInput {
+    width: 250px;
+    padding: 5px;
+    margin: 25px;
+    border: none;
+    border-bottom: 2px solid #f63081;
+    padding: 10px;
+    font-size: 30px;
+    color: #f63081;
+}
+
+.searchBarInput:focus {
+    outline: none;
+}
+
+
+.searchBarImg {
+    filter: hue-rotate(100deg) brightness(100%) opacity(100%);
+    z-index: -1;
+}
