@@ -3,6 +3,7 @@ package com.IntimateCode.backend.model.classes;
 import com.IntimateCode.backend.model.enums.Brand;
 import com.IntimateCode.backend.model.enums.Category;
 import com.IntimateCode.backend.model.enums.Color;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -31,6 +32,10 @@ public class Product {
 
     private String details;
 
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "user_id")
+    private Enduser enduser;
 
     @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
