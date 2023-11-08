@@ -1,9 +1,10 @@
 import "./SingleProduct.css";
 import CartButton from "../cartButton/CartButton.jsx";
+import { NavLink } from "react-router-dom";
 
 export default function SingleProduct(props) {
     return (
-        <div className="singleProduct">
+        <NavLink to={`/product/${props.id}`} className="singleProduct">
             <img className="singleProduct-image" src={props.imgLink} alt={props.product}></img>
             <div className="singleProduct-underImage">
                 <div>
@@ -12,6 +13,6 @@ export default function SingleProduct(props) {
                 </div>
                 <CartButton onClick={props.onClickCartButton}/>
             </div>
-        </div>
+        </NavLink>
     )
 }

@@ -31,6 +31,7 @@ export default function ProductsDisplay({ products }) {
           price={product.price}
           product={product.name}
           imgLink={product.imageUrl}
+          id={product.id}
           onClickCartButton={() => addToCart(product.id)}
         />
       ))}
