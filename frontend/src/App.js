@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 
 import { fetchDataFromBackend } from "./api";
-import ProductsDisplay from "./components/productsDisplay/ProductsDisplay";
+//import ProductsDisplay from "./components/productsDisplay/ProductsDisplay";
+import ProductPage from "./pages/productPage/ProductPage";
 import NavBar from "./components/navbar/NavBar";
 import ProductPage from "./pages/productPage/ProductPage";
 
@@ -30,8 +31,9 @@ function App() {
     <div className="App">
       <Header />
       <NavBar />
-      <ProductsDisplay products={{products}} />
-      {products[0] && <ProductPage product={products[9]} />}
+      {/* <ProductsDisplay products={{products}} /> */}
+      <ProductPage products={{products}} />
+      {/* {products[0] && <ProductPage product={products[9]} />} */}
     </div>
   );
 }

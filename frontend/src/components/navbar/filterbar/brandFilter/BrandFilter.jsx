@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./BrandFilter.css";
 
 export default function BrandFilter(props) {
@@ -14,17 +14,30 @@ export default function BrandFilter(props) {
     "CUUP",
   ];
 
-  const [brandsAreChecked, setBrandsAreChecked] = useState({
-    Intimissimi: false,
-    Fenty: false,
-    Bluebella: false,
-    Hanky_Panky: false,
-    Amorelie: false,
-    Fleur_de_Mal: false,
-    Victorias_Secret: false,
-    Agent_Provacateur: false,
-    CUUP: false,
+  const [brandsAreChecked, setBrandsAreChecked] = useState(() => {
+    const initialCheckedState = {};
+    brands.forEach((brand) => {
+      initialCheckedState[brand] = false;
+    });
+    return initialCheckedState;
   });
+
+  console.log(brands);
+
+  useEffect(() => {
+    if (props.filteredProducts && Array.isArray(props.filteredProducts)) {
+      const selectedBrands = new Set(
+        props.filteredProducts.map((product) => product.brand)
+      );
+      const updatedBrandsCheck = { ...brandsAreChecked };
+
+      for (const brand in updatedBrandsCheck) {
+        updatedBrandsCheck[brand] = selectedBrands.has(brand);
+      }
+
+      setBrandsAreChecked(updatedBrandsCheck);
+    }
+  }, [props.filteredProducts, brandsAreChecked]);
 
   const handleBrandChange = (brandName) => {
     setBrandsAreChecked((prevChecked) => ({
@@ -34,29 +47,17 @@ export default function BrandFilter(props) {
   };
 
   const handleSave = () => {
-    const pickedBrands = [];
-    for (const brand in brandsAreChecked) {
-      if (brandsAreChecked[brand] === true) {
-        pickedBrands.push(brand);
-      }
-    }
-    console.log(pickedBrands);
+    const pickedBrands = Object.keys(brandsAreChecked).filter(
+      (brand) => brandsAreChecked[brand]
+    );
     props.onBrandSelect(pickedBrands);
+    console.log("the picked brand is: " + pickedBrands);
   };
 
   const resetFilter = () => {
-    console.log("Resetting filter"); // Add this line for debugging
-    setBrandsAreChecked({
-      Intimissimi: false,
-      Fenty: false,
-      Bluebella: false,
-      Hanky_Panky: false,
-      Amorelie: false,
-      Fleur_de_Mal: false,
-      Victorias_Secret: false,
-      Agent_Provacateur: false,
-      CUUP: false,
-    });
+    setBrandsAreChecked(
+      Object.fromEntries(brands.map((brand) => [brand, false]))
+    );
   };
 
   return (
@@ -73,7 +74,11 @@ export default function BrandFilter(props) {
         <h3 className="brandFilterHeader">Brand</h3>
         {brands.map((brand) => (
           <label className="brand" key={brand}>
-            <span className="checkmark"></span>
+            <span
+              className={
+                brandsAreChecked[brand] ? "checkmark checked" : "checkmark"
+              }
+            ></span>
             <input
               type="checkbox"
               checked={brandsAreChecked[brand]}
