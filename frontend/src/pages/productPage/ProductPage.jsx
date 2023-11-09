@@ -1,11 +1,11 @@
 // TO DO: Figure out what data will be added to cart?!
 
-
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MainLayout from "../../layout/MainLayout";
 import { fetchProduct } from "../../api/fetchProduct";
 import "./ProductPage.css";
+import StarRating from "../../components/starRating/StarRating";
 
 export default function ProductPage() {
   const { productId } = useParams();
@@ -21,7 +21,9 @@ export default function ProductPage() {
   }
 
   function handleAddToCart() {
-    size !== null ? setProductToCart({...product, size: size}) : console.log("choose a size!!");
+    size !== null
+      ? setProductToCart({ ...product, size: size })
+      : console.log("choose a size!!");
   }
 
   useEffect(() => {
@@ -37,7 +39,6 @@ export default function ProductPage() {
     fetchData();
   }, [productId]);
 
-
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -50,6 +51,7 @@ export default function ProductPage() {
           alt={product.name}
         />
         <div className="productPageInfo">
+          <StarRating productRating={product.rating}/>
           <h3>{product.brand}</h3>
           <h2>{product.name}</h2>
           <h1>€ {product.price}</h1>
@@ -81,8 +83,20 @@ export default function ProductPage() {
                 )
               )}
           </div>
-          <button className="addToCartButton" onClick={() => handleAddToCart()}>Add to cart</button>
-          <div className="productDetails" onClick={()=>detailsVisible ? setDetailsVisible(false) : setDetailsVisible(true)}><h4>Product details</h4><h4>﹀</h4></div>
+          <button className="addToCartButton" onClick={() => handleAddToCart()}>
+            Add to cart
+          </button>
+          <div
+            className="productDetails"
+            onClick={() =>
+              detailsVisible
+                ? setDetailsVisible(false)
+                : setDetailsVisible(true)
+            }
+          >
+            <h4>Product details</h4>
+            <h4>﹀</h4>
+          </div>
           {detailsVisible && <p>{product.details}</p>}
         </div>
       </div>
