@@ -8,6 +8,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ProductPage from './pages/productPage/ProductPage';
 import MainPage from './pages/MainPage';
+import CartPage from './pages/cartPage/CartPage';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/product/:productId",
     element: <ProductPage />,
+  },
+  {
+    path: "/cart/",
+    element: <CartPage />,
   },
 ]);
 
