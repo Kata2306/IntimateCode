@@ -108,45 +108,63 @@ export default function CartPage() {
     setCartItems(updatedCartItems);
   };
 
+  const handleRemove = (name) => {
+    const updatedCartItems = cartItems.filter(
+      (cartItem) => cartItem.name !== name
+    );
+    setCartItems(updatedCartItems);
+  };
+
   return (
     <MainLayout>
       <div className="cartPage">
-        {cartItems.map((cartItem, index) => {
-          return (
-            <div className="cartItem" key={index}>
-              <img
-                className="cartItemImage"
-                src={cartItem.imageUrl}
-                alt={cartItem.name}
-              />
-              <div className="cartItemText">
-                <p>{cartItem.brand}</p>
-                <p>{cartItem.name}</p>
-                <p>{cartItem.price}</p>
-                <p>{cartItem.color}</p>
-                <p>{cartItem.size}</p>
-                <select
-                className="cartItemSelectQuantity"
-                  value={cartItem.quantity}
-                  onChange={(e) =>
-                    handleQuantityChange(index, parseInt(e.target.value))
-                  }
-                >
-                  {Array.from(
-                    { length: cartItem.productSize[cartItem.size] },
-                    (_, i) => (
-                      <option key={i} value={i + 1}>
-                        {i + 1}
-                      </option>
-                    )
-                  )}
-                </select>
-                <button>Remove</button>
+        <div className="cartItems">
+          {cartItems.map((cartItem, index) => {
+            return (
+              <div className="cartItem" key={index}>
+                <img
+                  className="cartItemImage"
+                  src={cartItem.imageUrl}
+                  alt={cartItem.name}
+                />
+                <div className="cartItemDetails">
+                <div className="cartItemText">
+                  <p>{cartItem.brand}</p>
+                  <p>{cartItem.name}</p>
+                  <p>{cartItem.price}</p>
+                  <p>{cartItem.color}</p>
+                  <p>{cartItem.size.toUpperCase()}</p>
+                  </div>
+                  <div className="cartItemButtons">
+                    <select
+                      className="cartItemSelectQuantity"
+                      value={cartItem.quantity}
+                      onChange={(e) =>
+                        handleQuantityChange(index, parseInt(e.target.value))
+                      }
+                    >
+                      {Array.from(
+                        { length: cartItem.productSize[cartItem.size] },
+                        (_, i) => (
+                          <option key={i} value={i + 1}>
+                            {i + 1}
+                          </option>
+                        )
+                      )}
+                    </select>
+                    <button onClick={() => handleRemove(cartItem.name)}>
+                      Remove
+                    </button>
+                  </div>
+                </div>
+                <div className="cartItemTotal">
+                  <p>Total: </p>
+                  <p>{cartItem.price * cartItem.quantity} €</p>
+                </div>
               </div>
-              <p>Total: {cartItem.price * cartItem.quantity}</p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
         <div className="cart">
           <p>TOTAL</p>
           <p>Subtotal: {subtotal}</p>
