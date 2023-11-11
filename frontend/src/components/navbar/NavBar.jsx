@@ -33,6 +33,15 @@ export default function NavBar(props) {
   };
   // end TypeFilter
 
+  const handleClick = () => {
+    setSelectedBrands([]);
+    setSelectedColors([]);
+    setSelectedTypes([]);
+    props.onBrandSelect([]);
+    props.onColorSelect([]);
+    props.onTypeSelect([]);
+  };
+
   return (
     <div className="navBar">
       <div className="navBarLeft">
@@ -43,6 +52,10 @@ export default function NavBar(props) {
           onColorSelect={handleColorSelection}
           onTypeSelect={handleTypeSelection}
         />
+
+        <button className="resetAllButton" onClick={handleClick}>
+          <p className="resetAllButtonText">Reset all filters</p>
+        </button>
       </div>
       <SearchBar handleChange={(e) => console.log(e.target.value)} />
     </div>
