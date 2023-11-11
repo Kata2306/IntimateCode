@@ -41,11 +41,14 @@ export default function NavBar(props) {
     props.onColorSelect([]);
     props.onTypeSelect([]);
   };
+  const handleSort = (pickedSort) => {
+    props.onSort(pickedSort);
+  };
 
   return (
     <div className="navBar">
       <div className="navBarLeft">
-        <SortBar />
+        <SortBar onSort={handleSort} />
         <Filters
           filteredProducts={props.filteredProducts}
           onBrandSelect={handleBrandSelection}
