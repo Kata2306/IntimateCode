@@ -3,8 +3,10 @@ import "./CartButton.css"
 
 export default function CartButton(props) {
     return (
-            <NavLink to="/cart" className="cartButton" >
+        <NavLink to="/cart" className="cartButton" >
                 <button className="cartButton" onClick={props.onClick}>🛒</button>
-            </NavLink>
+                </NavLink>
     )
 }
+
+//<NavLink to="/cart" className="cartButton" >
