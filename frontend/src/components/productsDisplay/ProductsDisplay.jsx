@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SingleProduct from "../singleProduct/SingleProduct";
 import "./ProductsDisplay.css";
 
 export default function ProductsDisplay({ products }) {
-  console.log(products.products);
-  
+  console.log(products);
+
   const [cart, setCart] = useState({});
 
   const addToCart = (productId) => {
@@ -25,7 +25,7 @@ export default function ProductsDisplay({ products }) {
 
   return (
     <div className="productsDisplay">
-      {products.products.map((product) => (
+      {products.map((product) => (
         <SingleProduct
           key={product.id}
           price={product.price}

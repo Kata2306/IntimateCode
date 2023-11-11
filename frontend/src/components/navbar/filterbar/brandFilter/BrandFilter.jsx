@@ -2,48 +2,41 @@ import { useState, useEffect } from "react";
 import "./BrandFilter.css";
 
 export default function BrandFilter(props) {
-  const brands = [
-    "Intimissimi",
-    "Fenty",
-    "Bluebella",
-    "Hanky_Panky",
-    "Amorelie",
-    "Fleur_de_Mal",
-    "Victorias_Secret",
-    "Agent_Provacateur",
-    "CUUP",
-  ];
-
   const [brandsAreChecked, setBrandsAreChecked] = useState(() => {
     const initialCheckedState = {};
-    brands.forEach((brand) => {
-      initialCheckedState[brand] = false;
+    props.filteredProducts.forEach((product) => {
+      initialCheckedState[product.brand.toLowerCase()] = false;
     });
     return initialCheckedState;
   });
 
-  console.log(brands);
-
   useEffect(() => {
     if (props.filteredProducts && Array.isArray(props.filteredProducts)) {
-      const selectedBrands = new Set(
-        props.filteredProducts.map((product) => product.brand)
+      const uniqueBrands = Array.from(
+        new Set(
+          props.filteredProducts.map((product) => product.brand.toLowerCase())
+        )
       );
-      const updatedBrandsCheck = { ...brandsAreChecked };
 
-      for (const brand in updatedBrandsCheck) {
-        updatedBrandsCheck[brand] = selectedBrands.has(brand);
-      }
+      setBrandsAreChecked((prevChecked) => {
+        const updatedBrandsCheck = { ...prevChecked };
 
-      setBrandsAreChecked(updatedBrandsCheck);
+        uniqueBrands.forEach((brand) => {
+          updatedBrandsCheck[brand] = prevChecked[brand] || false;
+        });
+
+        return updatedBrandsCheck;
+      });
     }
-  }, [props.filteredProducts, brandsAreChecked]);
+  }, [props.filteredProducts]);
 
   const handleBrandChange = (brandName) => {
-    setBrandsAreChecked((prevChecked) => ({
-      ...prevChecked,
-      [brandName]: !prevChecked[brandName],
-    }));
+    setBrandsAreChecked((prevChecked) => {
+      const updatedBrandsCheck = { ...prevChecked };
+      updatedBrandsCheck[brandName.toLowerCase()] =
+        !prevChecked[brandName.toLowerCase()];
+      return updatedBrandsCheck;
+    });
   };
 
   const handleSave = () => {
@@ -51,12 +44,17 @@ export default function BrandFilter(props) {
       (brand) => brandsAreChecked[brand]
     );
     props.onBrandSelect(pickedBrands);
-    console.log("the picked brand is: " + pickedBrands);
   };
 
   const resetFilter = () => {
     setBrandsAreChecked(
-      Object.fromEntries(brands.map((brand) => [brand, false]))
+      Object.fromEntries(
+        Array.from(
+          new Set(
+            props.filteredProducts.map((product) => product.brand.toLowerCase())
+          )
+        ).map((brand) => [brand, false])
+      )
     );
   };
 
@@ -72,16 +70,20 @@ export default function BrandFilter(props) {
           </button>
         </div>
         <h3 className="brandFilterHeader">Brand</h3>
-        {brands.map((brand) => (
+        {Array.from(
+          new Set(props.filteredProducts.map((product) => product.brand))
+        ).map((brand) => (
           <label className="brand" key={brand}>
             <span
               className={
-                brandsAreChecked[brand] ? "checkmark checked" : "checkmark"
+                brandsAreChecked[brand.toLowerCase()]
+                  ? "checkmark checked"
+                  : "checkmark"
               }
             ></span>
             <input
               type="checkbox"
-              checked={brandsAreChecked[brand]}
+              checked={brandsAreChecked[brand.toLowerCase()]}
               onChange={() => handleBrandChange(brand)}
             />
             {brand}

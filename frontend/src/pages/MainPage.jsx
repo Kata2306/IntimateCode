@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import MainLayout from "../layout/MainLayout";
-import ProductsDisplay from "../components/productsDisplay/ProductsDisplay";
 import NavBar from "../components/navbar/NavBar";
 import { fetchDataFromBackend } from "../api";
+import ProductOverview from "../components/productOverview/productOverview";
 
 export default function MainPage() {
   const [products, setProducts] = useState([]);
@@ -19,10 +19,11 @@ export default function MainPage() {
 
     fetchData();
   }, []);
+
   return (
     <MainLayout>
       <NavBar />
-      <ProductsDisplay products={{ products }} />
+      {products.length > 0 && <ProductOverview allProducts={products} />}
     </MainLayout>
   );
 }
