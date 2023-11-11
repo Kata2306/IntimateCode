@@ -11,13 +11,13 @@ import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
 
 const handleSendData = (data) => {
-  console.log(data);
+  //console.log(data);
   return data;
 }
 
 const data = handleSendData();
 
-console.log(data);
+//console.log(data);
 
 
 const router = createBrowserRouter([

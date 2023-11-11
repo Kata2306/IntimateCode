@@ -46,7 +46,6 @@ export default function ColorFilter(props) {
         pickedColors.push(color);
       }
     }
-    console.log(pickedColors);
     props.onColorSelect(pickedColors);
   };
 
@@ -65,6 +64,7 @@ export default function ColorFilter(props) {
       brown: false,
       beige: false,
     });
+    props.onColorSelect([]);
   };
 
   return (

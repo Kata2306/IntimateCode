@@ -14,13 +14,35 @@ export default function NavBar(props) {
   };
   // end BrandFilter
 
-  console.log(selectedBrands);
+  // for ColorFilter
+  const [selectedColors, setSelectedColors] = useState([]);
+
+  // Define a callback function to receive the picked colors
+  const handleColorSelection = (pickedColors) => {
+    setSelectedColors(pickedColors);
+    props.onColorSelect(pickedColors);
+  };
+  // end ColorFilter
+
+  // for TypeFilter
+  const [selectedTypes, setSelectedTypes] = useState([]);
+
+  const handleTypeSelection = (pickedTypes) => {
+    setSelectedTypes(pickedTypes);
+    props.onTypeSelect(pickedTypes);
+  };
+  // end TypeFilter
 
   return (
     <div className="navBar">
       <div className="navBarLeft">
         <SortBar />
-        <Filters onBrandSelect={handleBrandSelection} />
+        <Filters
+          filteredProducts={props.filteredProducts}
+          onBrandSelect={handleBrandSelection}
+          onColorSelect={handleColorSelection}
+          onTypeSelect={handleTypeSelection}
+        />
       </div>
       <SearchBar handleChange={(e) => console.log(e.target.value)} />
     </div>

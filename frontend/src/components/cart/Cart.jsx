@@ -1,5 +1,4 @@
 import { useState } from "react";
-import MainLayout from "../../layout/MainLayout";
 import "./Cart.css";
 import { NavLink } from "react-router-dom";
 

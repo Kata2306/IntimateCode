@@ -18,6 +18,7 @@ export default function Filters(props) {
         // Define a callback function to receive the picked colors
         const handleColorSelection = (pickedColors) => {
           setSelectedColors(pickedColors);
+          props.onColorSelect(pickedColors);
         };
         // end ColorFilter
       
@@ -35,10 +36,9 @@ export default function Filters(props) {
       
         const handleTypeSelection = (pickedTypes) => {
           setSelectedTypes(pickedTypes);
+          props.onTypeSelect(pickedTypes);
         };
         // end TypeFilter
-
-        console.log(selectedBrands);
 
     return (
       <div className="filters">
@@ -63,6 +63,7 @@ export default function Filters(props) {
           handleCloseFilterbar={() => setFilter("inactive")}
           handleBackButton={() => setFilter("active")}
           onBrandSelect={handleBrandSelection}
+          filteredProducts={props.filteredProducts}
         />
       )}
 

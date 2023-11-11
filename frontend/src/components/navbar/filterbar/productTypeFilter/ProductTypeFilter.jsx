@@ -36,7 +36,6 @@ export default function ProductTypeFilter(props) {
         pickedProductTypes.push(type);
       }
     }
-    console.log(pickedProductTypes);
     props.onTypeSelect(pickedProductTypes);
   };
 
@@ -51,6 +50,7 @@ export default function ProductTypeFilter(props) {
       Sleepwear: false,
       Fetish: false,
     });
+    props.onTypeSelect([]);
   };
 
   return (
