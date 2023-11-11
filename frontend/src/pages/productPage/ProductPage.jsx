@@ -1,13 +1,13 @@
 // TO DO: Figure out what data will be added to cart?!
 
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MainLayout from "../../layout/MainLayout";
 import { fetchProduct } from "../../api/fetchProduct";
 import "./ProductPage.css";
 import StarRating from "../../components/starRating/StarRating";
 
-export default function ProductPage() {
+export default function ProductPage(props) {
   const { productId } = useParams();
 
   const [product, setProduct] = useState(null);
@@ -20,11 +20,19 @@ export default function ProductPage() {
     setSize(size);
   }
 
-  function handleAddToCart() {
+  function handleHasASize() {
     size !== null
       ? setProductToCart({ ...product, size: size })
       : console.log("choose a size!!");
   }
+
+
+  function handleAddToCart() {
+    handleHasASize();
+    props.handleSendData(productToCart); 
+  }
+
+  console.log(productToCart);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +43,7 @@ export default function ProductPage() {
         console.error(error);
       }
     };
-
+  
     fetchData();
   }, [productId]);
 
@@ -51,7 +59,7 @@ export default function ProductPage() {
           alt={product.name}
         />
         <div className="productPageInfo">
-          <StarRating productRating={product.rating}/>
+          <StarRating productRating={product.rating} userType="loggedIn"/>
           <h3>{product.brand}</h3>
           <h2>{product.name}</h2>
           <h1>€ {product.price}</h1>
@@ -83,9 +91,11 @@ export default function ProductPage() {
                 )
               )}
           </div>
+          
           <button className="addToCartButton" onClick={() => handleAddToCart()}>
             Add to cart
           </button>
+          
           <div
             className="productDetails"
             onClick={() =>

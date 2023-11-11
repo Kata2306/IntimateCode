@@ -26,6 +26,7 @@ export default function Filters(props) {
       
         const handleBrandSelection = (pickedBrands) => {
           setSelectedBrands(pickedBrands);
+          props.onBrandSelect(pickedBrands);
         };
         // end BrandFilter
       
@@ -36,6 +37,8 @@ export default function Filters(props) {
           setSelectedTypes(pickedTypes);
         };
         // end TypeFilter
+
+        console.log(selectedBrands);
 
     return (
       <div className="filters">

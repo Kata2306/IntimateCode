@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
@@ -10,6 +10,16 @@ import ProductPage from './pages/productPage/ProductPage';
 import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
 
+const handleSendData = (data) => {
+  console.log(data);
+  return data;
+}
+
+const data = handleSendData();
+
+console.log(data);
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,15 +27,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/product/:productId",
-    element: <ProductPage />,
+    element: <ProductPage handleSendData={(e)=> handleSendData(e)}/>,
   },
   {
-    path: "/cart/",
-    element: <CartPage />,
+    path: "/cart",
+    element: <CartPage cartItem={data}/>,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

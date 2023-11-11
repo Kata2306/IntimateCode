@@ -4,6 +4,7 @@
     padding: 25px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.037);
     margin: 25px;
+    text-decoration: none;
 }
 
 .singleProduct-image {
@@ -22,4 +23,5 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: #f63081;
 }

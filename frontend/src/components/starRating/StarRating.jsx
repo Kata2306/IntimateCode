@@ -9,7 +9,7 @@ export default function StarRating({productRating, userType}) {
   const [rating, setRating] = useState(productRating);
   const [rateColor, setRateColor] = useState(null);
 
-  console.log(productRating);
+  //console.log(productRating);
 
   return (
     <div className="starRating">

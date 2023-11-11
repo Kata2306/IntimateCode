@@ -3,7 +3,7 @@
     flex-direction: row;
     margin: 25px;
     padding: 25px;
-    border: 2px solid pink;
+    background-color: #f630830f;
 }
 
 .cartItem {
@@ -12,14 +12,13 @@
     align-items: center;
     margin: 25px;
     padding: 25px;
-    border: 2px solid pink;
+    background-color: white;
 }
 
 .cartItemImage {
     width: 250px;
     margin: 15px;
     padding: 15px;
-    border: 2px solid pink;
 }
 
 .cartItemDetails {
@@ -27,13 +26,11 @@
     flex-direction: column;
     margin: 15px;
     padding: 15px;
-    border: 2px solid pink;
 }
 
 .cartItemText {
     margin: 15px;
     padding: 15px;
-    border: 2px solid pink;
 }
 
 .cartItemButtons {
@@ -42,7 +39,6 @@
     justify-content: space-between;
     margin: 15px;
     padding: 15px;
-    border: 2px solid pink;
 }
 
 .cartItemTotal {
@@ -52,14 +48,115 @@
     align-self: flex-end;
     margin: 25px;
     padding: 25px;
-    border: 2px solid pink;
+    font-size: 30px;
+    color:#f63081;
+    font-weight: bold;
 }
 
 .cart {
+    display: flex;
+    flex-direction: column;
     position: sticky;
     top: 10px;
-    border: 2px solid pink;
     margin: 25px;
-    padding: 25px;
+    padding: 50px;
     height: fit-content;
+    background-color: white;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    background-color: #f63081;
+    margin: 5px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: 15px;
+    transition: 0.3s; /* Adding a smooth transition effect */
+}
+
+.checkoutButton:hover {
+    box-shadow: 0px 0px 5px #f63081;
+}
+  
+.checkoutButton:active {
+    background-color: #f6308337;
+}
+
+.cartItemSelectQuantity {
+    width: 75px;
+    padding: 10px;
+    font-size: 20px;
+    color: #f63081;
+    background-color: white;
+    border: 0.5px solid #f6308337;
+    margin: 5px;
+    transition: 0.3s; /* Adding a smooth transition effect */
+}
+  
+.cartItemSelectQuantity:hover {
+    background-color: #f6308337;
+}
+  
+
+
+.removeItemButton {
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
+    color: #f63081;
+    background-color: white;
+    border: 0.5px solid #f6308337;
+    margin: 5px;
+    transition: 0.3s; /* Adding a smooth transition effect */
+}
+  
+.removeItemButton:hover {
+    background-color: #f6308337;
+}
+  
+.removeItemButton:focus {
+    background-color: #f63081;
+    color: white;
+}
+
+  
+.text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.textBolder {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f63081;
+}
+
+.textLighter {
+    font-size: 18px;
+    color:#f6308378;
+}
+
+.textBoldest {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #f63081;
+    width: fit-content;
+}
+
+.line {
+    width: 100%;
+    color: #f63081;
+}
+
+.cartItemLink {
+    text-decoration: none;
 }

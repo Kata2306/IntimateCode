@@ -6,6 +6,30 @@ import { fetchDataFromBackend } from "../api";
 
 export default function MainPage() {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([products]);
+  const [selectedBrands, setSelectedBrands] = useState([]);
+
+  const handleBrandSelection = (brands) => {
+    setSelectedBrands(brands);
+  };
+
+  console.log(selectedBrands);
+  console.log(products);
+
+
+  // Filter products based on selected brands
+    const filterProducts = products.filter(
+      (product) =>
+        selectedBrands.length === 0 ||
+        selectedBrands.includes(product.brand) // Convert to lowercase
+    );
+
+    console.log(filterProducts);
+
+  console.log(filteredProducts);
+
+  //const returnProducts = selectedBrands.length > 0 ? setFilteredProducts(filterProducts) : setFilteredProducts(products);
+  //console.log(returnProducts);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,9 +43,12 @@ export default function MainPage() {
 
     fetchData();
   }, []);
+
+
+
   return (
     <MainLayout>
-      <NavBar />
+      <NavBar onBrandSelect={handleBrandSelection}/>
       <ProductsDisplay products={{ products }} />
     </MainLayout>
   );
