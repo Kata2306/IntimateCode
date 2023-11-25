@@ -14,3 +14,25 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.resetAllButton {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px 5px 0px;
+    margin: 25px 25px 25px 0px;
+    border: none;
+    background-color: white;
+}
+
+.resetAllButton:hover {
+    background-color: #f6308337;
+}
+
+.resetAllButtonText {
+   
+    font-size: 20px;
+    color: #f63081;
+}
+
