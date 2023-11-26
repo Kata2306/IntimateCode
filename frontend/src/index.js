@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import ProductPage from './pages/productPage/ProductPage';
 import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
+import LoginPage from './pages/loginPage/LoginPage';
 
 const handleSendData = (data) => {
   //console.log(data);
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <CartPage cartItem={data}/>,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);
 
