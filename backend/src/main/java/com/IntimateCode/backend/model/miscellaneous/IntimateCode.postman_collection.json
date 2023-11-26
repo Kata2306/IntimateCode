@@ -7,105 +7,404 @@
 	},
 	"item": [
 		{
-			"name": "GET all products",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}/products",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET single product",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}/products/1",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET all product sizes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}/productsizes",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"productsizes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET sizes for a single product",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}/products/1/sizes",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products",
-						"1",
-						"sizes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST a new product",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": " {\r\n    \"name\": \"Silk underdress with lace inserts\",\r\n    \"price\": 15.90,\r\n    \"color\": \"blue\",\r\n    \"brand\": \"Intimissimi\",\r\n    \"category\": \"Sleepwear\",\r\n    \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n    \"rating\": 4.0, \r\n    \"details\": \"sexy, tight-fit, comfy\"\r\n  }",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "USER LOGIN",
+			"item": [
+				{
+					"name": "REGISTER new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"viki\", \r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{URL}}/products",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products"
-					]
+				{
+					"name": "LOGIN user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Melina\", \r\n    \"password\": \"CoderGirl2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET for user token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidmlraSIsImlhdCI6MTcwMTAyNjkyNCwicm9sZXMiOiJVU0VSIn0.XJC_bJrqLwyhc6-AUkdXV003XBOFAIPrkxF4-SB5bCNckaTLQh0zBH26fpKjWC67_qHhRXgJ-EmUBMgYwUtIukUnWZq-pP47jHfvTbidnbX2XJT5r7QG0R-P-W4Kw5xNcV2Hdg_8_03KByC5QuBbQ2xDho_XlESTComDdvAVn8WuyIai1OWluyEhWOqsNON_ciUIWmdrHUS0cVyq-kq0JriSVCEgqB5LnThwWXI24L_wX9z6Q15Yl-JkIpoZ7A6kfxxU3bCASHy8_gMFkGe0rFosb8pNSJgpc3mOGDQGE6tX_MBBTi9FyJ_PvnF1ZmQx5Kd1fP4rfk3uL5flX5nH_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET for admin token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MDEwMTE5ODYsInJvbGVzIjoiQURNSU4ifQ.bF7q2eC6_ZmagN87PlIvGW6IPUyM3wRdNAcJ_xp4O41N7FlO-ayoRbjFdaM03EBartEKhlIZ7rN6cPiwtBS2yLQg5lJ03Rv8cmCDWyoX0516OinADe7AJftVKO54kvKDgHBxzWWvL0QzddinzhdqbS_Jknlb7RKymCzgyf0-BQOFOpXmqCjVpmxTQsHka2ryeCADDK6Y3XcMHKpSBIUcBEZaery7uXhw_LeLWztj0nqamEyc14PVp9ItN9HGjPGPNdhR9zqs67T0SLLpLXefOjl2xJa3Ek5KLUc242eJKD49NdTYNPg95lIK8g_9srXwQWyOlT0E2ssnqCS7XtS65g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/admin/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MDEwMTE5ODYsInJvbGVzIjoiQURNSU4ifQ.bF7q2eC6_ZmagN87PlIvGW6IPUyM3wRdNAcJ_xp4O41N7FlO-ayoRbjFdaM03EBartEKhlIZ7rN6cPiwtBS2yLQg5lJ03Rv8cmCDWyoX0516OinADe7AJftVKO54kvKDgHBxzWWvL0QzddinzhdqbS_Jknlb7RKymCzgyf0-BQOFOpXmqCjVpmxTQsHka2ryeCADDK6Y3XcMHKpSBIUcBEZaery7uXhw_LeLWztj0nqamEyc14PVp9ItN9HGjPGPNdhR9zqs67T0SLLpLXefOjl2xJa3Ek5KLUc242eJKD49NdTYNPg95lIK8g_9srXwQWyOlT0E2ssnqCS7XtS65g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET single user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MDEwMTI5NTYsInJvbGVzIjoiQURNSU4ifQ.hlvL3bBhcVHSg01KtOmouuNVamX5XoO1u3Y-ObXZUPpb0P_s8p75qx29r4YSyjZjVIvbC9Z4rQ2jLKasiftY62PJwRaHGJOpgylxQXxgwF5e2Hk5ZjLJ2EiMHxawdeEpYpeRSiaJKP63CxGrxyMQdWMUt1coD-Tle6L5H27snj0efaHgUxQmsaidixj0wYAOJiAbDQDASkj6KSrz0WOTs5afswGIWTtxO_slAe-AFho8sU4O6_ZT3eUycp4MicBaltEF7ures9FKZHwwzstjWIguCahs4P9lvVgS9YrQbGr_p-7qgHnhaKLi8GaNI2GNT9ML374ooarSjXtNc8klEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/all/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"all",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT product to wishlist OR cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidmlraSIsImlhdCI6MTcwMTAyNzM5MSwicm9sZXMiOiJVU0VSIn0.t_TlJJOPMI5xjlnc9yS20lFrj7g8g74pzzyJMFCWPJy06tggDRIYzCeolxZJjwZD1sZc6BxytxFWB9pyprA1Gvh1XnxrRwsBIV0_LEXiKy1u0iQH6s-2s0VkeyDUn3Ago4AOQXacJ8WOaaEfAxMs4HMy8ZiDFVWMqlsUtahYvBQAMLAERrtsdhtlpbbPDG-JAL7havyalB4vzddiMo3w4-D-_vfpuvXueJWHYf0ZVP5A_VJDpdCNx6b7sNKc0sMlloo4L6jPIjWSAwv84SuuG8oAn9m6BIFLuPKKjkKQ4qQgKf5ihyL3Lm0_0UAUz2Pq7hY4fP-I_U2eZFZq2D_1cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wishlist\": [\r\n        {\r\n            \"name\": \"Silk underdress with lace inserts\",\r\n            \"price\": 15.90,\r\n            \"color\": \"blue\",\r\n            \"brand\": \"Intimissimi\",\r\n            \"category\": \"Sleepwear\",\r\n            \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n            \"rating\": 4.0,\r\n            \"details\": \"sexy, tight-fit, comfy\"\r\n        }\r\n    ],\r\n    \"cartList\": [\r\n        {\r\n            \"name\": \"Silk underdress with lace inserts\",\r\n            \"price\": 15.90,\r\n            \"color\": \"blue\",\r\n            \"brand\": \"Intimissimi\",\r\n            \"category\": \"Sleepwear\",\r\n            \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n            \"rating\": 4.0,\r\n            \"details\": \"sexy, tight-fit, comfy\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/all/2/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"all",
+								"2",
+								"product"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "PRODUCTS",
+			"item": [
+				{
+					"name": "GET all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/products/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all product sizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/productsizes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"productsizes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sizes for a single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/products/1/sizes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"1",
+								"sizes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST a new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Silk underdress with lace inserts\",\r\n    \"price\": 15.90,\r\n    \"color\": \"blue\",\r\n    \"brand\": \"Intimissimi\",\r\n    \"category\": \"Sleepwear\",\r\n    \"imageUrl\": \"https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg\",\r\n    \"rating\": 4.0, \r\n    \"details\": \"sexy, tight-fit, comfy\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT a single product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 1,\r\n        \"name\": \"Black lace bralette\",\r\n        \"price\": 20.00,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Amorelie\",\r\n        \"category\": \"Bras\",\r\n        \"imageUrl\": \"https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073\",\r\n        \"rating\": 4.5,\r\n        \"details\": \"sexy, tight-fit, comfy\",\r\n        \"productSize\": null\r\n    },",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/products/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE a product with product sizes",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"xs\": 5,\r\n    \"s\": 10,\r\n    \"m\": 15,\r\n    \"l\": 20,\r\n    \"xl\": 10,\r\n    \"xxl\": 5,\r\n    \"xxxl\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/products/add-sizes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"add-sizes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE a single product via id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/products/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "INITIALIZE database",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidmlraSIsImlhdCI6MTcwMTAyNjkyNCwicm9sZXMiOiJVU0VSIn0.XJC_bJrqLwyhc6-AUkdXV003XBOFAIPrkxF4-SB5bCNckaTLQh0zBH26fpKjWC67_qHhRXgJ-EmUBMgYwUtIukUnWZq-pP47jHfvTbidnbX2XJT5r7QG0R-P-W4Kw5xNcV2Hdg_8_03KByC5QuBbQ2xDho_XlESTComDdvAVn8WuyIai1OWluyEhWOqsNON_ciUIWmdrHUS0cVyq-kq0JriSVCEgqB5LnThwWXI24L_wX9z6Q15Yl-JkIpoZ7A6kfxxU3bCASHy8_gMFkGe0rFosb8pNSJgpc3mOGDQGE6tX_MBBTi9FyJ_PvnF1ZmQx5Kd1fP4rfk3uL5flX5nH_A",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -125,79 +424,6 @@
 					"path": [
 						"products",
 						"initialize"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT a single product",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "  {\r\n        \"id\": 1,\r\n        \"name\": \"Black lace bralette\",\r\n        \"price\": 20.00,\r\n        \"color\": \"black\",\r\n        \"brand\": \"Amorelie\",\r\n        \"category\": \"Bras\",\r\n        \"imageUrl\": \"https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073\",\r\n        \"rating\": 4.5,\r\n        \"details\": \"sexy, tight-fit, comfy\",\r\n        \"productSize\": null\r\n    },",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{URL}}/products/1",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "UPDATE a product with product sizes",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"xs\": 5,\r\n    \"s\": 10,\r\n    \"m\": 15,\r\n    \"l\": 20,\r\n    \"xl\": 10,\r\n    \"xxl\": 5,\r\n    \"xxxl\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{URL}}/products/add-sizes/1",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products",
-						"add-sizes",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE a single product via id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}/products/1",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"products",
-						"1"
 					]
 				}
 			},
