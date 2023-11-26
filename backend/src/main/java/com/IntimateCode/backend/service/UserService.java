@@ -1,6 +1,8 @@
 package com.IntimateCode.backend.service;
 
 import com.IntimateCode.backend.model.classes.ApplicationUser;
+import com.IntimateCode.backend.model.classes.AssociatedProduct;
+import com.IntimateCode.backend.model.classes.Product;
 import com.IntimateCode.backend.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -42,5 +44,38 @@ public class UserService implements UserDetailsService {
         Optional<ApplicationUser> user = userRepository.findById(Math.toIntExact(id));
         return user.orElse(null);
     }
+
+    public ApplicationUser addProductUser(Long id, AssociatedProduct newAssociatedProduct) {
+        Optional<ApplicationUser> userOptional = userRepository.findById(Math.toIntExact(id));
+
+        if (userOptional.isPresent()) {
+            ApplicationUser user = userOptional.get();
+
+
+            AssociatedProduct existingAssociatedProduct = user.getAssociatedProduct();
+            if (existingAssociatedProduct == null) {
+                existingAssociatedProduct = new AssociatedProduct();
+            }
+
+            // Update the wishlist and cartList of the existing associated product
+            existingAssociatedProduct.setWishlist(newAssociatedProduct.getWishlist());
+            existingAssociatedProduct.setCartList(newAssociatedProduct.getCartList());
+
+            // Set the updated associated product to the user
+            user.setAssociatedProduct(existingAssociatedProduct);
+
+            userRepository.save(user);
+            return user;
+        }
+
+        return null;
+    }
+
+
+
+
+
+
+
 
 }

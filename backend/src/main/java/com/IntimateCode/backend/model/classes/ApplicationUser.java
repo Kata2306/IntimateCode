@@ -2,6 +2,7 @@ package com.IntimateCode.backend.model.classes;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.*;
@@ -19,32 +20,6 @@ public class ApplicationUser implements UserDetails{
     private String username;
     private String password;
 
-    @ElementCollection
-    @CollectionTable(name = "wishlist", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "product_id")
-    private Set<Long> wishlist = new HashSet<>();
-
-    public Set<Long> getWishlist() {
-        return wishlist;
-    }
-
-    public void setWishlist(Set<Long> wishlist) {
-        this.wishlist = wishlist;
-    }
-
-    public Set<Long> getCart() {
-        return cart;
-    }
-
-    public void setCart(Set<Long> cart) {
-        this.cart = cart;
-    }
-
-    @ElementCollection
-    @CollectionTable(name = "cart", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "product_id")
-    private Set<Long> cart = new HashSet<>();
-
     @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(
             name="user_role_junction",
@@ -52,6 +27,18 @@ public class ApplicationUser implements UserDetails{
             inverseJoinColumns = {@JoinColumn(name="role_id")}
     )
     private Set<Role> authorities;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "associated_product_id")
+    private AssociatedProduct associatedProduct;
+
+    public AssociatedProduct getAssociatedProduct() {
+        return associatedProduct;
+    }
+
+    public void setAssociatedProduct(AssociatedProduct associatedProduct) {
+        this.associatedProduct = associatedProduct;
+    }
 
     public ApplicationUser() {
         super();
@@ -129,5 +116,7 @@ public class ApplicationUser implements UserDetails{
         // TODO Auto-generated method stub
         return true;
     }
+
+
 
 }

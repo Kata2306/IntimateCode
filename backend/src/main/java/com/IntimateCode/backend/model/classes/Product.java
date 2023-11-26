@@ -7,6 +7,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 public class Product {
     @Id
@@ -36,18 +39,20 @@ public class Product {
     @JsonManagedReference
     private ProductSize productSize;
 
-    public ApplicationUser getApplicationUser() {
-        return applicationUser;
-    }
-
-    public void setApplicationUser(ApplicationUser applicationUser) {
-        this.applicationUser = applicationUser;
-    }
 
     @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "user_id")
-    private ApplicationUser applicationUser;
+    @JoinColumn(name = "associated_product_id")
+    private AssociatedProduct associatedProduct;
+
+    // Constructors, getters, and setters
+
+    public AssociatedProduct getAssociatedProduct() {
+        return associatedProduct;
+    }
+
+    public void setAssociatedProduct(AssociatedProduct associatedProduct) {
+        this.associatedProduct = associatedProduct;
+    }
 
     public long getId() {
         return id;

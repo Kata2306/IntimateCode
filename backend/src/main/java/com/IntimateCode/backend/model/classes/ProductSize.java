@@ -16,6 +16,7 @@ public class ProductSize {
     @JsonBackReference
     private Product product;
 
+
     private Integer xs;
 
     private Integer s;
