@@ -45,6 +45,10 @@ export default function NavBar(props) {
     props.onSort(pickedSort);
   };
 
+  const handleSearch = (pickedLetter) => {
+    props.onSearch(pickedLetter);
+  }
+
   return (
     <div className="navBar">
       <div className="navBarLeft">
@@ -60,7 +64,7 @@ export default function NavBar(props) {
           <p className="resetAllButtonText">Reset all filters</p>
         </button>
       </div>
-      <SearchBar handleChange={(e) => console.log(e.target.value)} />
+      <SearchBar onSearch={handleSearch} />
     </div>
   );
 }

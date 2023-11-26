@@ -2,106 +2,104 @@ import { useState } from "react";
 import "./Cart.css";
 import { NavLink } from "react-router-dom";
 
-export default function Cart({cartItem}) {
-  console.log(cartItem);
-  console.log(cartItem.price);
-  const [cartItems, setCartItems] = useState([]);
-  if( cartItem !== null && cartItem !== undefined) {
-    setCartItems([...cartItems, cartItem]);
-  }
-  /*
-    [{
-      id: 1,
-      name: "Black lace bralette",
-      price: 19.99,
-      color: "black",
-      brand: "Amorelie",
-      category: "Bras",
-      imageUrl:
-        "https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073",
-      rating: 4.5,
-      details: "sexy, tight-fit, comfy",
-      productSize: {
-        xs: 8,
-        s: 12,
-        m: 18,
-        l: 15,
-        xl: 6,
-        xxl: 3,
-        xxxl: 1,
-      },
-      quantity: 1,
-      size: "l",
+export default function Cart() {
+
+  const [cartItems, setCartItems] = useState(    [{
+    id: 1,
+    name: "Black lace bralette",
+    price: 19.99,
+    color: "black",
+    brand: "Amorelie",
+    category: "Bras",
+    imageUrl:
+      "https://www.hankypanky.com/cdn/shop/files/Hanky-Panky-Signature-Lace-Padded-Crossover-Bralette-Black-BLACK-View-1.jpg?v=1692906073",
+    rating: 4.5,
+    details: "sexy, tight-fit, comfy",
+    productSize: {
+      xs: 8,
+      s: 12,
+      m: 18,
+      l: 15,
+      xl: 6,
+      xxl: 3,
+      xxxl: 1,
     },
-    {
-      id: 2,
-      name: "Rose Petal Panties",
-      price: 13.45,
-      color: "pink",
-      brand: "Intimissimi",
-      category: "Panties",
-      imageUrl:
-        "https://eqomcdn.com/content/photos/products/obsessive/75070/1693912646.obs6480_9.jpg?w=720&q=90",
-      rating: 4.2,
-      details: "Elegant, versatile, durable",
-      productSize: {
-        xs: 8,
-        s: 12,
-        m: 8,
-        l: 10,
-        xl: 6,
-        xxl: 3,
-        xxxl: 2,
-      },
-      quantity: 1,
-      size: "xs",
+    quantity: 1,
+    size: "l",
+  },
+  {
+    id: 2,
+    name: "Rose Petal Panties",
+    price: 13.45,
+    color: "pink",
+    brand: "Intimissimi",
+    category: "Panties",
+    imageUrl:
+      "https://eqomcdn.com/content/photos/products/obsessive/75070/1693912646.obs6480_9.jpg?w=720&q=90",
+    rating: 4.2,
+    details: "Elegant, versatile, durable",
+    productSize: {
+      xs: 8,
+      s: 12,
+      m: 8,
+      l: 10,
+      xl: 6,
+      xxl: 3,
+      xxxl: 2,
     },
-    { id: 3, 
-      name: "Sexy blue slip",
-      price: 26.79,
-      color: "blue",
-      brand: "Fenty",
-      category: "Panties",
-      imageUrl:
-        "https://eqomcdn.com/content/photos/products/christine-le-duc/69532/1684938265.cth010-blu-xss_3.jpg?w=720&q=90",
-      rating: 4.7,
-      details: "Smooth, breathable, lightweight",
-      productSize: {
-        xs: 1,
-        s: 12,
-        m: 1,
-        l: 19,
-        xl: 6,
-        xxl: 2,
-        xxxl: 5,
-      },
-      quantity: 3,
-      size: "s",
+    quantity: 1,
+    size: "xs",
+  },
+  { id: 3, 
+    name: "Sexy blue slip",
+    price: 26.79,
+    color: "blue",
+    brand: "Fenty",
+    category: "Panties",
+    imageUrl:
+      "https://eqomcdn.com/content/photos/products/christine-le-duc/69532/1684938265.cth010-blu-xss_3.jpg?w=720&q=90",
+    rating: 4.7,
+    details: "Smooth, breathable, lightweight",
+    productSize: {
+      xs: 1,
+      s: 12,
+      m: 1,
+      l: 19,
+      xl: 6,
+      xxl: 2,
+      xxxl: 5,
     },
-    {
-      id: 4, 
-      name: "Sexy pink slip",
-      price: 26.79,
-      color: "pink",
-      brand: "Fenty",
-      category: "Panties",
-      imageUrl:
-        "https://eqomcdn.com/content/photos/products/christine-le-duc/69529/1684937192.cth010-pnk-xss_3.jpg?w=720&q=90",
-      rating: 4.1,
-      details: "Supportive, flexible, sporty",
-      productSize: {
-        xs: 8,
-        s: 12,
-        m: 18,
-        l: 15,
-        xl: 6,
-        xxl: 3,
-        xxxl: 1,
-      },
-      quantity: 1,
-      size: "m",
+    quantity: 3,
+    size: "s",
+  },
+  {
+    id: 4, 
+    name: "Sexy pink slip",
+    price: 26.79,
+    color: "pink",
+    brand: "Fenty",
+    category: "Panties",
+    imageUrl:
+      "https://eqomcdn.com/content/photos/products/christine-le-duc/69529/1684937192.cth010-pnk-xss_3.jpg?w=720&q=90",
+    rating: 4.1,
+    details: "Supportive, flexible, sporty",
+    productSize: {
+      xs: 8,
+      s: 12,
+      m: 18,
+      l: 15,
+      xl: 6,
+      xxl: 3,
+      xxxl: 1,
     },
-  ]*/
+    quantity: 1,
+    size: "m",
+  },
+]);
+  //if( cartItem !== null && cartItem !== undefined) {
+  //  setCartItems([...cartItems, cartItem]);
+  //}
+
 
   const subtotal = cartItems.reduce(
     (total, cartItem) => total + cartItem.price * cartItem.quantity,
@@ -131,7 +129,7 @@ export default function Cart({cartItem}) {
   }
 
   return (
-    <><h1>CART ({cartItems.length > 1 ? cartItems.length + " Items" : cartItems.length + " Item"})</h1>
+    <><h1 className="cartHeader">CART ({cartItems.length > 1 ? cartItems.length + " Items" : cartItems.length + " Item"})</h1>
     <div className="cartPage">
         <div className="cartItems">
           {cartItems.map((cartItem, index) => {
