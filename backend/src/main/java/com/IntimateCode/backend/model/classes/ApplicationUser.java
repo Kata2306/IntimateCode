@@ -4,19 +4,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 
 @Entity
 @Table(name="application_user")
@@ -28,6 +18,32 @@ public class ApplicationUser implements UserDetails{
     @Column(unique=true)
     private String username;
     private String password;
+
+    @ElementCollection
+    @CollectionTable(name = "wishlist", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "product_id")
+    private Set<Long> wishlist = new HashSet<>();
+
+    public Set<Long> getWishlist() {
+        return wishlist;
+    }
+
+    public void setWishlist(Set<Long> wishlist) {
+        this.wishlist = wishlist;
+    }
+
+    public Set<Long> getCart() {
+        return cart;
+    }
+
+    public void setCart(Set<Long> cart) {
+        this.cart = cart;
+    }
+
+    @ElementCollection
+    @CollectionTable(name = "cart", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "product_id")
+    private Set<Long> cart = new HashSet<>();
 
     @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(

@@ -9,5 +9,4 @@ import java.util.Optional;
 @RepositoryRestResource
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-
 }

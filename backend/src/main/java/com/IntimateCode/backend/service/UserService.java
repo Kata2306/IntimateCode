@@ -1,5 +1,6 @@
 package com.IntimateCode.backend.service;
 
+import com.IntimateCode.backend.model.classes.ApplicationUser;
 import com.IntimateCode.backend.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -7,6 +8,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -29,6 +32,15 @@ public class UserService implements UserDetailsService {
         System.out.println("In the user details service");
 
         return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("user is not valid"));
+    }
+
+    public List<ApplicationUser> getAllUsers () {
+        return userRepository.findAll();
+    }
+
+    public ApplicationUser getSingleUser(Long id){
+        Optional<ApplicationUser> user = userRepository.findById(Math.toIntExact(id));
+        return user.orElse(null);
     }
 
 }

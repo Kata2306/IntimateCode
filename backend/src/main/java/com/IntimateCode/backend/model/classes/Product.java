@@ -32,14 +32,22 @@ public class Product {
 
     private String details;
 
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private ProductSize productSize;
+
+    public ApplicationUser getApplicationUser() {
+        return applicationUser;
+    }
+
+    public void setApplicationUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
+    }
+
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "user_id")
     private ApplicationUser applicationUser;
-
-    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private ProductSize productSize;
 
     public long getId() {
         return id;
