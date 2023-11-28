@@ -116,7 +116,13 @@ public class DataLoaderConfig {
                 new Product(10, "Silk underdress with lace inserts", 15.90,
                         Color.blue, Brand.Intimissimi, Category.Sleepwear,
                         "https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg", 4.0, "Relaxed, casual, effortless",
+                        new ProductSize(10L, null, 0, 1, 8, 13, 2, 13, 1),
+                        null),
+                new Product(11, "Silk underdress with lace inserts", 15.90,
+                        Color.blue, Brand.Intimissimi, Category.Sleepwear,
+                        "https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg", 4.0, "Relaxed, casual, effortless",
                         new ProductSize(10L, null, 0, 1, 8, 13, 2, 13, 1), null)
+
         );
 
         for (Product product : products) {
