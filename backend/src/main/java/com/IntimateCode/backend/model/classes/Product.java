@@ -46,6 +46,25 @@ public class Product {
 
     // Constructors, getters, and setters
 
+
+    public Product(long id, String name, double price, Color color, Brand brand, Category category, String imageUrl, double rating, String details, ProductSize productSize, AssociatedProduct associatedProduct) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.color = color;
+        this.brand = brand;
+        this.category = category;
+        this.imageUrl = imageUrl;
+        this.rating = rating;
+        this.details = details;
+        this.productSize = productSize;
+        this.associatedProduct = associatedProduct;
+    }
+
+    public Product() {
+        // Empty constructor needed by Hibernate
+    }
+
     public AssociatedProduct getAssociatedProduct() {
         return associatedProduct;
     }

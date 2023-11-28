@@ -3,6 +3,7 @@ package com.IntimateCode.backend.model.classes;
 import com.IntimateCode.backend.model.classes.Product;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -32,6 +33,22 @@ public class ProductSize {
 
 
     private Integer xxxl;
+
+    public ProductSize(Long id, Product product, Integer xs, Integer s, Integer m, Integer l, Integer xl, Integer xxl, Integer xxxl) {
+        this.id = id;
+        this.product = product;
+        this.xs = xs;
+        this.s = s;
+        this.m = m;
+        this.l = l;
+        this.xl = xl;
+        this.xxl = xxl;
+        this.xxxl = xxxl;
+    }
+
+    public ProductSize() {
+        // Empty constructor needed by Hibernate
+    }
 
     public Long getId() {
         return id;
