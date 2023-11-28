@@ -118,10 +118,48 @@ public class DataLoaderConfig {
                         "https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg", 4.0, "Relaxed, casual, effortless",
                         new ProductSize(10L, null, 0, 1, 8, 13, 2, 13, 1),
                         null),
-                new Product(11, "Silk underdress with lace inserts", 15.90,
-                        Color.blue, Brand.Intimissimi, Category.Sleepwear,
-                        "https://www.intimissimi.com/dw/image/v2/BHHR_PRD/on/demandware.static/-/Sites-INT_EC_COM/default/dwe4be409c/images/LC71S11467-F.jpg?sw=1200&sfrm=jpeg", 4.0, "Relaxed, casual, effortless",
-                        new ProductSize(10L, null, 0, 1, 8, 13, 2, 13, 1), null)
+                new Product(11, "Ziggy low-cut velvet half-cup bra with " +
+                        "floral embroidery", 25.90,
+                        Color.green, Brand.Victorias_Secret, Category.Bras,
+                        "https://de.victoriassecret" +
+                                ".com/p/760x1013/tif/zz/23/07/20/01" +
+                                "/112306235MGI_OF_F.jpg", 4.0, "Relaxed, " +
+                        "casual, sexy",
+                        new ProductSize(11L, null, 2, 1, 8, 2, 9, 13, 1), null),
+                new Product(12, "Midnight Affair corset top with push-up " +
+                        "effect and patent-look faux leather", 45.90,
+                        Color.red, Brand.Fleur_de_Mal, Category.Fetish,
+                        "https://de.victoriassecret" +
+                                ".com/p/760x1013/tif/zz/23/08/31/10" +
+                                "/1122181874Q6_OF_F.jpg", 4.8, "Relaxed, " +
+                        "sexy, spicy",
+                        new ProductSize(12L, null, 2, 1, 8, 2, 9, 13, 1), null),
+
+                new Product(13, "Unlined corset top with floral embroidery and gold-colored sequins", 30.90,
+                        Color.yellow, Brand.Hanky_Panky, Category.Fetish,
+                        "https://de.victoriassecret" +
+                                ".com/p/760x1013/tif/zz/23/09/22/00" +
+                                "/1123062766BQ_OF_F.jpg", 4.8, "comfy, " +
+                        "sexy, spicy",
+                        new ProductSize(13L, null, 12, 1, 18, 2, 0, 13, 1),
+                        null),
+
+                new Product(14, "Strappy top set made from ribbed modal and lace", 22.80,
+                        Color.white, Brand.Hanky_Panky, Category.Sleepwear,
+                        "https://de.victoriassecret" +
+                                ".com/p/760x1013/tif/zz/23/08/17/02" +
+                                "/1122992234Y5_OF_F.jpg", 4.3, "daily-wear, " +
+                        "warm, fun",
+                        new ProductSize(14L, null, 12, 1, 18, 2, 0, 13, 1),
+                        null),
+                new Product(15, "Purple set of your dreams", 72.80,
+                        Color.purple, Brand.CUUP, Category.Lingerie_Set,
+                        "https://de.victoriassecret.com/p/760x1013/tif/zz/23/08/23/03/1121585627P0_OM_S.jpg", 4.3, "daily-wear, " +
+                        "quirky, fun",
+                        new ProductSize(15L, null, 12, 1, 18, 2, 0, 13, 1),
+                        null)
+
+
 
         );
 

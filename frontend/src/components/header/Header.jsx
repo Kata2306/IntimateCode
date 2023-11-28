@@ -4,10 +4,6 @@ import CartButton from "../cartButton/CartButton.jsx";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
-  //   const handleLogoClick = () => {
-  //     window.location.reload();
-  //   };
-
   return (
     <div className="header">
       <NavLink to="/" className="logo">

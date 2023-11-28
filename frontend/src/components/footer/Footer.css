@@ -1,0 +1,19 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+
+  .footer-section {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer-section:not(:last-child) {
+    border-right: 1px solid white;
+    padding-right: 10px; 
+    margin-right: 10px; 
+  }
