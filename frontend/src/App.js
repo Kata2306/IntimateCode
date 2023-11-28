@@ -7,6 +7,7 @@ import { fetchDataFromBackend } from "./api";
 import ProductPage from "./pages/productPage/ProductPage";
 import NavBar from "./components/navbar/NavBar";
 import ProductPage from "./pages/productPage/ProductPage";
+import Footer from "./components/footer/Footer"
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       {/* <ProductsDisplay products={{products}} /> */}
       <ProductPage products={{products}} />
       {/* {products[0] && <ProductPage product={products[9]} />} */}
+      <Footer/>
     </div>
   );
 }
