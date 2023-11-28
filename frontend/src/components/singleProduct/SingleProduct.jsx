@@ -9,7 +9,7 @@ export default function SingleProduct(props) {
             <div className="singleProduct-underImage">
                 <div>
                     <p>{props.product}</p>
-                    <p>{props.price}</p>
+                    <p>{props.price.toFixed(2)} €</p>
                 </div>
                 <CartButton onClick={props.onClickCartButton}/>
             </div>

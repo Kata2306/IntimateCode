@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css';
+
 import reportWebVitals from './reportWebVitals';
 import ProductPage from './pages/productPage/ProductPage';
 import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import UserLogin from './components/userLogin/UserLogin';
+
 
 const handleSendData = (data) => {
   //console.log(data);
