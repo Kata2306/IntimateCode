@@ -6,12 +6,12 @@ import fetchToken from "../../api/fetchToken";
 export default function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({"username" : "", "password" : ""});
+    const [token, setToken] = useState("");
 
     const handleSignIn = () => {
-        email !== "" && password !== "" ? setUser({"username" : email, "password" : password}) : console.log("pls enter better");
+        email !== "" && password !== "" ? setUser({"username" : email, "password" : password}) : console.log("pls enter better"); 
     }
-
 
     const [showEmailLabel, setShowEmailLabel] = useState(false);
 
@@ -33,8 +33,11 @@ export default function Login() {
     useEffect(() => {
         const getUserToken = async () => {
           try {
+            if(user.username !== "" && user.password !== "") {
             const tokenData = await fetchToken(user);
             console.log('Token data:', tokenData);
+            setToken(tokenData);
+            }
           } catch (error) {
             console.error('Error fetching token:', error);
           }
@@ -44,8 +47,34 @@ export default function Login() {
         getUserToken();
       }, [user]); 
 
-      console.log(user);
+      useEffect(() => {
+        console.log(token);
+        if (token !== "") {
+        const handleUserRequest = async () => {
+          try {
+            const res = await fetch("http://localhost:8080/user/", {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+              },
+            });
+      
+            if (!res.ok) {
+              throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+      
+            const data = await res.text();
+            console.log(data);
+          } catch (error) {
+            console.error("Error handling user request:", error);
+          }
+        };
+        handleUserRequest();
+      };
+      }, [token]);
 
+      console.log(user);
+      console.log(token);
 
     return (
         <div className="login">
