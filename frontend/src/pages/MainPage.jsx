@@ -29,31 +29,33 @@ export default function MainPage() {
   };
 
   const handleSearch = (letter) => {
-    const regexPattern = new RegExp(`\\w*${letter}\\w*`, 'i'); // 'i' flag for case-insensitive search
+    const regexPattern = new RegExp(`\\w*${letter}\\w*`, "i"); // 'i' flag for case-insensitive search
     setSelectedLetters(regexPattern);
   };
-  
+
   // Filter products based on selected brands, colors, types, and letters
   const filteredProducts = products.filter((product) => {
     const brandMatch =
       selectedBrands.length === 0 ||
       selectedBrands.includes(product.brand.toLowerCase());
-  
+
     const colorMatch =
       selectedColors.length === 0 || selectedColors.includes(product.color);
-  
+
     const typeMatch =
       selectedTypes.length === 0 || selectedTypes.includes(product.category);
-  
+
     const letterMatch =
       !selectedLetters ||
       (selectedLetters instanceof RegExp &&
         (product.name.match(selectedLetters) ||
           product.category.match(selectedLetters))) ||
-      (typeof selectedLetters === 'string' &&
+      (typeof selectedLetters === "string" &&
         (product.name.toLowerCase().includes(selectedLetters.toLowerCase()) ||
-          product.category.toLowerCase().includes(selectedLetters.toLowerCase())));
-  
+          product.category
+            .toLowerCase()
+            .includes(selectedLetters.toLowerCase())));
+
     return brandMatch && colorMatch && typeMatch && letterMatch;
   });
 
