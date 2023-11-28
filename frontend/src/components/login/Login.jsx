@@ -66,7 +66,7 @@ export default function Login() {
 
       
       useEffect(() => {
-        console.log(token.jwt);
+        console.log(token);
         if (token !== "") {
         const handleUserRequest = async () => {
           try {
@@ -76,7 +76,7 @@ export default function Login() {
                 "Content-Type": "application/json",
               },
             });
-      
+            localStorage.setItem("jwt", token);
             if (!res.ok) {
               throw new Error(`HTTP error! Status: ${res.status}`);
             }

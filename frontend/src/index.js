@@ -10,6 +10,7 @@ import ProductPage from './pages/productPage/ProductPage';
 import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
 import LoginPage from './pages/loginPage/LoginPage';
+import UserLogin from './components/userLogin/UserLogin';
 
 const handleSendData = (data) => {
   //console.log(data);
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/user",
+    element: <UserLogin />,
   },
 ]);
 
