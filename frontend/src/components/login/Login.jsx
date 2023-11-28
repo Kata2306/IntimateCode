@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import { useEffect, useState } from "react";
 import fetchToken from "../../api/fetchToken";
+//import { Buffer } from "buffer";
 
 export default function Login() {
     const [email, setEmail] = useState();
@@ -29,6 +30,22 @@ export default function Login() {
         setPassword(e.target.value);
     }
 
+    /*
+    useEffect(() => {
+      if (token !== "") {
+    function handleAuthorized() {
+      const headers = new Headers();
+      const auth = Buffer.from(
+        user.username + ":" + user.password
+      ).toString("base64");
+      headers.set("Authorization", "Basic " + auth);
+      return fetch("http://localhost:8080/user/", {method: "GET", headers: headers})
+      .then((response) => response.text())
+      .then(text => console.log(text))
+      .catch((error) => console.log("ERROR: " + error));
+  } handleAuthorized()};
+}, [user.password, user.username, token]);
+*/
 
     useEffect(() => {
         const getUserToken = async () => {
@@ -36,7 +53,7 @@ export default function Login() {
             if(user.username !== "" && user.password !== "") {
             const tokenData = await fetchToken(user);
             console.log('Token data:', tokenData);
-            setToken(tokenData);
+            setToken(tokenData.jwt);
             }
           } catch (error) {
             console.error('Error fetching token:', error);
@@ -47,8 +64,9 @@ export default function Login() {
         getUserToken();
       }, [user]); 
 
+      
       useEffect(() => {
-        console.log(token);
+        console.log(token.jwt);
         if (token !== "") {
         const handleUserRequest = async () => {
           try {
