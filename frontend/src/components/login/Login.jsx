@@ -40,6 +40,7 @@ export default function Login() {
           const tokenData = await fetchToken(user);
           console.log("Token data:", tokenData);
           setToken(tokenData.jwt);
+          localStorage.setItem("jwt", tokenData.jwt);
         }
       } catch (error) {
         console.error("Error fetching token:", error);
@@ -78,6 +79,7 @@ export default function Login() {
 
   console.log(user);
   console.log(token);
+  console.log(localStorage.jwt);
 
   return (
     <div className="login">
