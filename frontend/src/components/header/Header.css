@@ -37,31 +37,12 @@
     text-decoration: none;
 }
 
-.loginButton {
-    background-color: white;
-    border: none;
-    padding: 15px;
-    margin: 15px;
-    transition: 0.3s; /* Adding a smooth transition effect */
-}
-
-/*.loginButton:hover {
-    font-size: 60px;
-}*/
-
-.loginButtonIcon:hover {
-    font-size: 60px;
-}
-
-.loginButtonIcon {
-    font-size: 40px;
-    filter: hue-rotate(120deg) brightness(150%) opacity(60%);
-    background-color: none;
-}
 
 .header-buttons {
     display: flex;
+    align-items: center;
     flex-direction: row;
+    margin-right: 2%;
 }
 
 

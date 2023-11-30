@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import CartButton from "../cartButton/CartButton.jsx";
+import LoginButton from "../loginButton/LoginButton.jsx";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
@@ -17,11 +18,7 @@ export default function Header() {
         </div>
       </NavLink>
       <div className="header-buttons">
-      <NavLink to="/login" className="loginButton" >
-        <button className="loginButton">
-          <p className="loginButtonIcon">👤</p>
-        </button>
-        </NavLink>
+        <LoginButton />
         <CartButton />
       </div>
     </div>
