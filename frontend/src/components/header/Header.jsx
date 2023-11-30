@@ -17,9 +17,11 @@ export default function Header() {
         </div>
       </NavLink>
       <div className="header-buttons">
+      <NavLink to="/login" className="loginButton" >
         <button className="loginButton">
           <p className="loginButtonIcon">👤</p>
         </button>
+        </NavLink>
         <CartButton />
       </div>
     </div>
