@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import { useEffect, useState } from "react";
 import fetchToken from "../../api/fetchToken";
+import { jwtDecode } from 'jwt-decode';
 
 export default function Login() {
   const [email, setEmail] = useState();
