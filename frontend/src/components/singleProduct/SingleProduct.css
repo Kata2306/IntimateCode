@@ -1,14 +1,17 @@
 .singleProduct {
     border: 2px solid white;
-    width: fit-content;
+    width: 350px;
     padding: 25px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.037);
     margin: 25px;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .singleProduct-image {
-    height: 500px;
+    max-height: 500px;
     transition: 0.3s; /* Adding a smooth transition effect */
 }
 

@@ -10,6 +10,7 @@ import ProductPage from './pages/productPage/ProductPage';
 import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
 import LoginPage from './pages/loginPage/LoginPage';
+import UserLogin from './components/userLogin/UserLogin';
 import AboutPage from './pages/aboutPage/AboutPage.jsx';
 import DsgvoPage from './pages/dsgvoPage/DsgvoPage';
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/user",
+    element: <UserLogin />,
   },
   {
     path:"/about",

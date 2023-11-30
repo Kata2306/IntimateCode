@@ -6,6 +6,7 @@ import MainLayout from "../../layout/MainLayout";
 import { fetchProduct } from "../../api/fetchProduct";
 import "./ProductPage.css";
 import StarRating from "../../components/starRating/StarRating";
+import { FaLandmark } from "react-icons/fa";
 
 export default function ProductPage(props) {
   const { productId } = useParams();
@@ -14,16 +15,18 @@ export default function ProductPage(props) {
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [productToCart, setProductToCart] = useState({});
   const [size, setSize] = useState(null);
+  const [selectSizeAlert, setSelectSizeAlert] = useState(false);
 
   function handleSizeClick(size) {
     console.log(`Size ${size} clicked`);
     setSize(size);
+    setSelectSizeAlert(false);
   }
 
   function handleHasASize() {
     size !== null
       ? setProductToCart({ ...product, size: size })
-      : console.log("choose a size!!");
+      : setSelectSizeAlert(true);
   }
 
 
@@ -66,6 +69,7 @@ export default function ProductPage(props) {
           <h4>{product.color}</h4>
           <div>
             <h4>Available Sizes:</h4>
+            {selectSizeAlert&&<h3 className="selectSizeAlert">Please select a size</h3>}
             {Object.keys(product.productSize)
               .filter((size) => size !== "id")
               .map((size) =>
