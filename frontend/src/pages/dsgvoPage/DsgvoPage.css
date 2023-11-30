@@ -1,0 +1,22 @@
+.section-white {
+    flex: 1; 
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    margin: 20px;
+    padding: 20px;
+    vertical-align: middle;
+    box-sizing: border-box; 
+    margin: 5%;
+    
+  }
+
+  .pink-bg{
+    background-color:#fac1d97d;
+    padding: 20px;
+  }
+
+  .blue {
+    color:blue;
+    display: inline;
+  }

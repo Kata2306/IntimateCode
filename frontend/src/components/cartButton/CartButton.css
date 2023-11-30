@@ -1,31 +1,30 @@
-.cartButton {
-    font-size: 40px;
-    background-color: white;
-    border: none;
-    padding: 15px;
-    margin: 15px;
-    transition: 0.3s; /* Adding a smooth transition effect */
-    /*filter: hue-rotate(100deg) brightness(100%) opacity(100%);*/
+.cartButtonIcon {
+  font-size: 40px;
+ 
+  color: #fff; 
+  background-color: #b9b9b97d;
+  padding: 5px 10px; 
+  border: none; 
 }
 
-.cartButton:hover {
-    font-size: 60px;
+.cartButtonIcon:hover {
+  font-size: 60px;
 }
 
 .cartButton:active {
-    animation: shake 0.5s;
-  }
+  animation: shake 0.5s;
+}
 
 @keyframes shake {
-    0% { transform: rotate(-30deg); }
-    10% { transform: rotate(-15deg); }
-    20% { transform: rotate(0deg); }
-    30% { transform: rotate(15deg); }
-    40% { transform: rotate(30deg); }
-    50% { transform: rotate(15deg); }
-    60% { transform: rotate(0deg); }
-    70% { transform: rotate(-15deg); }
-    80% { transform: rotate(-30deg); }
-    90% { transform: rotate(-15deg); }
-    100% { transform: rotate(0deg); }
-  }
+  0% { transform: rotate(-30deg); }
+  10% { transform: rotate(-15deg); }
+  20% { transform: rotate(0deg); }
+  30% { transform: rotate(15deg); }
+  40% { transform: rotate(30deg); }
+  50% { transform: rotate(15deg); }
+  60% { transform: rotate(0deg); }
+  70% { transform: rotate(-15deg); }
+  80% { transform: rotate(-30deg); }
+  90% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}

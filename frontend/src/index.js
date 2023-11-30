@@ -11,6 +11,8 @@ import MainPage from './pages/MainPage';
 import CartPage from './pages/cartPage/CartPage';
 import LoginPage from './pages/loginPage/LoginPage';
 import UserLogin from './components/userLogin/UserLogin';
+import AboutPage from './pages/aboutPage/AboutPage.jsx';
+import DsgvoPage from './pages/dsgvoPage/DsgvoPage';
 
 
 const handleSendData = (data) => {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
     path: "/user",
     element: <UserLogin />,
   },
+  {
+    path:"/about",
+    element: <AboutPage/>
+  },
+  {
+    path: "/dsgvo",
+    element: <DsgvoPage/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
