@@ -6,7 +6,6 @@ import MainLayout from "../../layout/MainLayout";
 import { fetchProduct } from "../../api/fetchProduct";
 import "./ProductPage.css";
 import StarRating from "../../components/starRating/StarRating";
-import { FaLandmark } from "react-icons/fa";
 
 export default function ProductPage(props) {
   const { productId } = useParams();
