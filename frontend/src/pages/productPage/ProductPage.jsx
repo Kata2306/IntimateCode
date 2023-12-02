@@ -16,6 +16,12 @@ export default function ProductPage(props) {
   const [size, setSize] = useState(null);
   const [selectSizeAlert, setSelectSizeAlert] = useState(false);
   const [linkEnable, setLinkEnable] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  function isUserLoggedIn() {
+    const jwt = localStorage.getItem("jwt");
+    jwt.length > 0 ? setLoggedIn("loggedIn") : setLoggedIn("notLoggedIn");
+  }
 
   function handleSizeClick(size) {
     console.log(`Size ${size} clicked`);
@@ -45,6 +51,7 @@ export default function ProductPage(props) {
       try {
         const data = await fetchProduct(productId);
         setProduct(data);
+        isUserLoggedIn();
       } catch (error) {
         console.error(error);
       }
@@ -65,7 +72,7 @@ export default function ProductPage(props) {
           alt={product.name}
         />
         <div className="productPageInfo">
-          <StarRating productRating={product.rating} userType="loggedIn"/>
+          <StarRating productRating={product.rating} userType={loggedIn}/>
           <h3>{product.brand}</h3>
           <h2>{product.name}</h2>
           <h1>€ {product.price}</h1>

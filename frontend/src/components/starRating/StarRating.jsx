@@ -1,4 +1,5 @@
 // TODO: figure out when to set productRating? if the user is logged in and already bought the product? 
+// TODO: put the new rating to the db
 
 
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { FaStar } from "react-icons/fa";
 export default function StarRating({productRating, userType}) {
   const [rating, setRating] = useState(productRating);
   const [rateColor, setRateColor] = useState(null);
+  const [clicked, setClicked] = useState(false);
 
   //console.log(productRating);
 
@@ -26,8 +28,12 @@ export default function StarRating({productRating, userType}) {
                 if (userType === "loggedIn") {
                 setRating(currentRate);
                 setRateColor(currentRate);
+                setClicked(false);
+                } else {
+                  setClicked(true);
                 }
               }}
+
             />
             <FaStar
               size={20}
@@ -36,6 +42,7 @@ export default function StarRating({productRating, userType}) {
           </label>
         );
       })}
+      {clicked && <p>you need to log in to rate products!</p>}
     </div>
   );
 }
