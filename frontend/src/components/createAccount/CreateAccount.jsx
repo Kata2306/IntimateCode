@@ -1,6 +1,8 @@
-import "./Login.css";
+import "./CreateAccount.css";
 import { useEffect, useState } from "react";
 import fetchToken from "../../api/fetchToken";
+
+//TODO!!!!!!!!!!!!!!!!!!!!
 
 export default function CreateAccount(props) {
     const [username, setUsername] = useState();
@@ -42,7 +44,7 @@ export default function CreateAccount(props) {
               localStorage.setItem("jwt", tokenData.jwt);
               props.handleRedirect();
             } else {
-              setWarnWrongLoginData(true);
+              console.log("idk");
             }
           }
         } catch (error) {
@@ -81,7 +83,7 @@ export default function CreateAccount(props) {
   
     return (
       <div className="login">
-        <h2>Sign In</h2>
+        <h2>Create account</h2>
         <div className="loginInputs">
           <div className="loginInputAndLabel">
             <label>{showUsernameLabel && "Username"}</label>

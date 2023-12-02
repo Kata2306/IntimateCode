@@ -13,6 +13,7 @@ import LoginPage from './pages/loginPage/LoginPage';
 import UserLogin from './components/userLogin/UserLogin';
 import AboutPage from './pages/aboutPage/AboutPage.jsx';
 import DsgvoPage from './pages/dsgvoPage/DsgvoPage';
+import CreateAccountPage from './pages/createAccount/CreateAccountPage.jsx';
 
 
 const handleSendData = (data) => {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: "/dsgvo",
     element: <DsgvoPage/>
+  },
+  {
+    path: "/createUser",
+    element: <CreateAccountPage />
   }
 ]);
 

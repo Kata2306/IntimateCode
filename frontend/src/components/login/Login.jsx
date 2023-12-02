@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Login.css";
 import { useEffect, useState } from "react";
 import fetchToken from "../../api/fetchToken";
@@ -112,7 +112,7 @@ export default function Login(props) {
         SIGN IN
       </button>
       <p>
-        Don't have an account? <Link>Create an account</Link>
+        Don't have an account? <NavLink to="/createUser">Create an account</NavLink>
       </p>
     </div>
   );
