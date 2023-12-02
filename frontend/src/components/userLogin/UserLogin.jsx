@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { jwtDecode } from 'jwt-decode';
+import MainLayout from "../../layout/MainLayout";
 
 export default function UserLogin() {
     const [userData, setUserData] = useState(null);
@@ -29,8 +30,8 @@ export default function UserLogin() {
                     console.log('Response Text:', data); // Log the response text
 
                     // Attempt parsing the response as JSON
-                    //const parsedData = data ? JSON.parse(data) : null;
-                    setUserData(data);
+                    const parsedData = data ? JSON.parse(data) : null;
+                    setUserData(parsedData);
                 }
             } catch (error) {
                 setError(error.message);
@@ -48,11 +49,22 @@ export default function UserLogin() {
         return <div>Loading...</div>;
     }
 
+    console.log(typeof userData);
+    const user = userData.find((user) => user.username === decodedToken.sub);
+    console.log(user);
+    
     // Assuming userData contains the username
     return (
         <div>
-            <div>Welcome, {decodedToken.sub}</div>
-            {/* Other components or data to render */}
-        </div>
+            <h1>Welcome, {decodedToken.sub}</h1>
+            <div>
+            <button>My Profile</button>
+            <button>My Orders</button>
+            <button>My Wishlist</button>
+            </div>
+            <div>
+                {user.associatedProduct && user.associatedProduct.map((product) => <div>{product}</div>)}
+            </div>
+            </div>
     );
 }

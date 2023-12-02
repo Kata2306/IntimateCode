@@ -70,3 +70,8 @@ label {
 .signInButton:active {
     background-color: #f6308337;
 }
+
+.warning {
+    color: #f63081;
+    font-weight: bold;
+}
