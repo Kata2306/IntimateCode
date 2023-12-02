@@ -6,8 +6,10 @@ import MainLayout from "../../layout/MainLayout";
 export default function LoginPage() {
   const [loggedIn, setLoggedIn] = useState();
 
-  const handleRedirect = () => {
-    setLoggedIn(true);
+  console.log("loginPAge");
+  const handleRedirect = (value) => {
+    console.log(value);
+    value === "toUserLogin" ? setLoggedIn(true) : setLoggedIn(false);
   }
 
   useEffect(() => {
@@ -22,5 +24,5 @@ export default function LoginPage() {
     userLoggedIn();
   }, []);
 
-  return <MainLayout>{loggedIn ? <UserLogin /> : <Login handleRedirect={handleRedirect} />}</MainLayout>;
+  return <MainLayout>{loggedIn ? <UserLogin handleRedirect={handleRedirect}/> : <Login handleRedirect={handleRedirect} />}</MainLayout>;
 }

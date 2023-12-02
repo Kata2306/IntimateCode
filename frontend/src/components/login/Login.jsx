@@ -43,7 +43,7 @@ export default function Login(props) {
           if (tokenData.username !== null && tokenData.jwt !== "") {
             setToken(tokenData.jwt);
             localStorage.setItem("jwt", tokenData.jwt);
-            props.handleRedirect();
+            props.handleRedirect("toUserLogin");
           } else {
             setWarnWrongLoginData(true);
           }
