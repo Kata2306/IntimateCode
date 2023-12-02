@@ -1,6 +1,6 @@
 // TO DO: Figure out what data will be added to cart?!
 
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MainLayout from "../../layout/MainLayout";
 import { fetchProduct } from "../../api/fetchProduct";
@@ -15,6 +15,7 @@ export default function ProductPage(props) {
   const [productToCart, setProductToCart] = useState({});
   const [size, setSize] = useState(null);
   const [selectSizeAlert, setSelectSizeAlert] = useState(false);
+  const [linkEnable, setLinkEnable] = useState(false);
 
   function handleSizeClick(size) {
     console.log(`Size ${size} clicked`);
@@ -31,7 +32,10 @@ export default function ProductPage(props) {
 
   function handleAddToCart() {
     handleHasASize();
-    props.handleSendData(productToCart); 
+    if (selectSizeAlert === false) {
+      props.handleSendData(productToCart);
+      setLinkEnable(true);
+    }; 
   }
 
   console.log(productToCart);
@@ -95,9 +99,13 @@ export default function ProductPage(props) {
               )}
           </div>
           
-          <button className="addToCartButton" onClick={() => handleAddToCart()}>
+          {linkEnable ? 
+          <NavLink to="/" ><button className="addToCartButton" onClick={() => handleAddToCart()}>
             Add to cart
           </button>
+          </NavLink> : <button className="addToCartButton" onClick={() => handleAddToCart()}>
+            Add to cart
+          </button>}
           
           <div
             className="productDetails"
